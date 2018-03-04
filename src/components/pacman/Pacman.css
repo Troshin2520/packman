@@ -1,0 +1,40 @@
+.pacman{
+    width: 3vw;
+    height: 3vw;
+    z-index: 2;
+    font-size: 2vw;
+}
+
+.pacman-top{
+    background-color:yellow;
+    height:1.5vw;
+    width:3vw;
+    border-radius:1.5vw 1.5vw 0 0;
+    animation: spin1 0.5s infinite linear;
+    z-index: 3;
+    text-align: center;
+}
+
+.pacman-bottom{
+    background-color:yellow;
+    height:1.5vw;
+    width:3vw;
+    border-radius:0 0 1.5vw 1.5vw;
+    animation: spin2 0.5s infinite linear;
+    z-index: 3;
+}
+
+.pacman-turn-top {
+    transform: rotate(270deg);
+}
+
+@keyframes spin2 {
+    0%  {transform: rotate(0deg);}
+    50%{transform: rotate(35deg);}
+}
+
+
+@keyframes spin1 {
+    0%  {transform: rotate(0deg);}
+    50%{transform: rotate(-35deg);}
+}

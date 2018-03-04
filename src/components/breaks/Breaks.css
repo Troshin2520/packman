@@ -1,0 +1,23 @@
+.wall-block {
+    width: 4vw;
+    height: 4vw;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.wall-stone {
+    width: 1.9vw;
+    height: 0.9vw;
+    margin: 0vw 0.05vw 0vw 0.05vw;
+    background-color: red;
+}
+
+.wall-stone-half {
+    width: 0.95vw;
+    height: 0.9vw;
+    background-color: red;
+}
