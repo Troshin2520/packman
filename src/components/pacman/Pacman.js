@@ -11,7 +11,6 @@ class Pacman extends Component {
         return (<div className="pacman">
                     <div className="pacman-top">&bull;</div>
                     <div className="pacman-bottom"></div>
-                    <div className="feed"></div>
                 </div>);
     }
 }
