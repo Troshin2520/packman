@@ -1,3 +1,4 @@
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ENV = process.env.STAGE || 'production';
 const IsDev = ENV === 'DEV';
 
@@ -15,7 +16,7 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader",
+                    loader: 'babel-loader',
                     query: {
                         presets: [
                             'react',
@@ -25,10 +26,32 @@ module.exports = {
                     }
                 }
             },
+            /*{
+                test: /(\.less|\.css$)$/,
+                loader: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['style-loader', 'css-loader', 'less-loader',  'postcss-loader']
+                })
+            },*/
             {
                 test: /\.css$/,
                 exclude: /node_modules/,
-                loader: ['style-loader', 'css-loader']
+                use: [
+                    {
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true,
+                            modules: true,
+                            localIdentName: '[local]___[hash:base64:5]'
+                        }
+                    },
+                    {
+                        loader:  'postcss-loader'
+                    }
+                ]
             },
             {
                 test: /\.svg$/,
@@ -36,5 +59,8 @@ module.exports = {
                 loader: 'raw-loader'
             },
         ]
-    }
+    },
+    /*plugins: [
+        new ExtractTextPlugin('./styles/bundle.css')
+    ]*/
 };
