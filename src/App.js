@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Pacman from  './components/pacman/Pacman';
 import Breaks from  './components/breaks/Breaks';
+import Spider from  './components/spider/Spider';
+
 
 class App extends Component {
   render() {
@@ -12,6 +14,13 @@ class App extends Component {
         </div>
         <div>
             <Breaks />
+        </div>
+        <div>
+            <Spider color="blue" />
+            <Spider color="red" />
+            <Spider color="yellow" />
+            <Spider color="green" />
+            <Spider color="drugged" />
         </div>
       </div>
     );

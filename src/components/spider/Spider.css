@@ -1,0 +1,120 @@
+.spider {
+    display: flex;
+    width: 4vw;
+    height: 4vw;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.spider-body {
+    border-radius: 50% 50% 0 0;
+    width: 4vw;
+    height: 3vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.spider-blue .spider-body,.spider-blue .spider-claw {
+    background-color: blue;
+}
+
+.spider-red .spider-body,.spider-red .spider-claw {
+    background-color: red;
+}
+
+.spider-green .spider-body,.spider-green .spider-claw {
+    background-color: green;
+}
+
+.spider-yellow .spider-body,.spider-yellow .spider-claw {
+    background-color: yellow;
+}
+
+.spider-drugged .spider-body,.spider-drugged .spider-claw {
+    background-color: lightblue;
+}
+
+.spider-bottom {
+    display: flex;
+}
+
+.spider-eyes {
+    display:flex;
+    background-color: white;
+    width: 1vw;
+    height: 1vw;
+    border-radius: 100%;
+}
+
+.spider-direction-left .spider-bottom {
+    justify-content: flex-start;
+}
+
+.spider-direction-right .spider-bottom {
+    justify-content: flex-end;
+}
+
+.spider-direction-left .spider-eyes {
+    justify-content: flex-start;
+    transition: all 0.3s ease-out;
+}
+
+.spider-direction-right .spider-eyes {
+    justify-content: flex-end;
+    transition: all 0.3s ease-out;
+}
+
+.spider-direction-center .spider-eyes {
+    justify-content: center;
+    transition: all 0.3s ease-out;
+}
+
+.spider-direction-middle .spider-eyes {
+    align-items: center;
+    transition: all 0.3s ease-out;
+}
+
+.spider-direction-top .spider-eyes {
+    align-items: flex-start;
+    transition: all 0.3s ease-out;
+}
+
+.spider-direction-bottom .spider-eyes {
+    align-items: flex-end;
+    transition: all 0.3s ease-out;
+}
+
+.spider-direction-right .spider-claws, .spider-direction-left .spider-claws {
+    width: 90%;
+    transition: all 0.3s ease-out;
+}
+
+.spider-drugged .spider-eyes {
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-out;
+}
+
+.spider-drugged  .spider-claws {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.spider-pupils {
+    background-color: black;
+    width: 0.5vw;
+    height: 0.5vw;
+    border-radius: 100%;
+}
+
+.spider-claws {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.spider-claw {
+    width: 0.6vw;
+    height: 0.6vw;
+}
