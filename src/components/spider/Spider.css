@@ -1,15 +1,15 @@
 .spider {
     display: flex;
-    width: 4vw;
-    height: 4vw;
+    width: 2vw;
+    height: 2vw;
     flex-direction: column;
     justify-content: center;
 }
 
 .spider-body {
     border-radius: 50% 50% 0 0;
-    width: 4vw;
-    height: 3vw;
+    width: 2vw;
+    height: 1.5vw;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -42,8 +42,8 @@
 .spider-eyes {
     display:flex;
     background-color: white;
-    width: 1vw;
-    height: 1vw;
+    width: 0.5vw;
+    height: 0.5vw;
     border-radius: 100%;
 }
 
@@ -103,8 +103,8 @@
 
 .spider-pupils {
     background-color: black;
-    width: 0.5vw;
-    height: 0.5vw;
+    width: 0.25vw;
+    height: 0.25vw;
     border-radius: 100%;
 }
 
@@ -115,6 +115,6 @@
 }
 
 .spider-claw {
-    width: 0.6vw;
-    height: 0.6vw;
+    width: 0.3vw;
+    height: 0.3vw;
 }
