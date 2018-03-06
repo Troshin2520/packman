@@ -10,16 +10,16 @@ class App extends Component {
     return (
       <div className="App">
         <div>
-          <Pacman />
+            <Pacman />
         </div>
         <div>
             <Breaks />
         </div>
         <div>
-            <Spider color="blue" />
-            <Spider color="red" />
-            <Spider color="yellow" />
-            <Spider color="green" />
+            <Spider color="blue" dirX="left" dirY="top" />
+            <Spider color="red" dirX="right" dirY="middle"  />
+            <Spider color="yellow" dirX="left" dirY="center"  />
+            <Spider color="green" dirX="right" dirY="bottom"  />
             <Spider color="drugged" />
         </div>
       </div>

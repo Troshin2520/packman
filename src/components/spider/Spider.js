@@ -8,7 +8,9 @@ class Spider extends Component {
     }
 
     render() {
-        return (<div className={`spider spider-${this.props.color} spider-direction-top spider-direction-left`}>
+        return (<div className={`spider spider-${this.props.color}
+                                spider-direction-${this.props.dirX}
+                                spider-direction-${this.props.dirY}`}>
                     <div className="spider-body">
                         <div className="spider-eyes">
                             <div className="spider-pupils"></div>
