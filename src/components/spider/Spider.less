@@ -1,0 +1,121 @@
+.spider {
+    display: flex;
+    width: 4rem;
+    height: 4rem;
+    flex-direction: column;
+    justify-content: center;
+    &-body {
+        border-radius: 50% 50% 0 0;
+        width: 4rem;
+        height: 3vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    &-blue &-body,&-blue &-claw {
+        background-color: blue;
+    }
+
+    &-red &-body,&-red &-claw {
+        background-color: red;
+    }
+
+    &-green &-body,&-green &-claw {
+        background-color: green;
+    }
+
+    &-yellow &-body,&-yellow &-claw {
+        background-color: yellow;
+    }
+
+    &-drugged &-body,&-drugged &-claw {
+        background-color: lightblue;
+    }
+
+    &-bottom {
+        display: flex;
+    }
+
+    &-eyes {
+        display:flex;
+        background-color: white;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 100%;
+    }
+
+    &-direction-left &-bottom {
+        justify-content: flex-start;
+    }
+
+    &-direction-right &-bottom {
+        justify-content: flex-end;
+    }
+
+    &-direction-left &-eyes {
+        justify-content: flex-start;
+        transition: all 0.3s ease-out;
+    }
+
+    &-direction-right &-eyes {
+        justify-content: flex-end;
+        transition: all 0.3s ease-out;
+    }
+
+    &-direction-center &-eyes {
+        justify-content: center;
+        transition: all 0.3s ease-out;
+    }
+
+    &-direction-middle &-eyes {
+        align-items: center;
+        transition: all 0.3s ease-out;
+    }
+
+    &-direction-top &-eyes {
+        align-items: flex-start;
+        transition: all 0.3s ease-out;
+    }
+
+    &-direction-bottom &-eyes {
+        align-items: flex-end;
+        transition: all 0.3s ease-out;
+    }
+
+    &-direction-right &-claws, &-direction-left &-claws {
+        width: 90%;
+        transition: all 0.3s ease-out;
+    }
+
+    &-drugged &-eyes {
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease-out;
+    }
+
+    &-drugged  &-claws {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    &-pupils {
+        background-color: black;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 100%;
+    }
+
+    &-claws {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-claw {
+        width: 0.6rem;
+        height: 0.6rem;
+    }
+}
+
+

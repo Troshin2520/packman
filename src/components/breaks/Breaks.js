@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Breaks.css';
+import './Breaks.less';
 
 class Breaks extends Component {
 
@@ -8,7 +8,7 @@ class Breaks extends Component {
     }
 
     render() {
-        return (<div className="wall-block">
+        return (<div className="wall">
                     <div className="wall-stone"></div>
                     <div className="wall-stone"></div>
                     <div className="wall-stone-half"></div>

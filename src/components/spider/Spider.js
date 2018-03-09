@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Spider.css';
+import './Spider.less';
 
 class Spider extends Component {
 
