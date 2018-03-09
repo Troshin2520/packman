@@ -6,13 +6,6 @@ import Spider from  './components/spider/Spider';
 import Way from  './components/way/Way';
 import Gates from  './components/gates/Gates';
 
-
-const empty = 0;
-const food  = 1;
-const wall  = 2;
-const drug  = 4;
-const gates = 8;
-
 const initialState = [
     [2,2,2,2,2,2,2,2,2,2,2,2,2],
     [2,4,1,1,1,1,2,1,1,1,1,4,2],
@@ -30,7 +23,27 @@ const initialState = [
 ];
 
 class App extends Component {
-  render() {
+
+
+    constructor(props) {
+        super(props);
+        this.spiders = [];
+    }
+
+    componentDidMount() {
+        let spiders = this.spiders;
+        let xDirs = ['left', 'right', 'center'];
+        let yDirs = ['top', 'bottom', 'middle'];
+        setInterval(function() {
+            spiders.forEach((spider) => {
+                let rX = Math.round(Math.random() * 10) % 3;
+                let rY = Math.round(Math.random() * 10) % 3;
+                spider.setState({dirX: xDirs[rX], dirY: yDirs[rY]});
+            });
+        }, 1000);
+    }
+
+    render() {
     return ( <div className="App">
         <div>
             <Pacman />
@@ -51,21 +64,23 @@ class App extends Component {
                                 return <Way key={key} type="tablet" />
                             case 8:
                                 return <Gates key={key} />
+                            default:
                         }
+                        return '';
                     })}
                 </div>);
             })}
         </div>
         <div>
-            <Spider color="blue" dirX="left" dirY="top" />
-            <Spider color="red" dirX="right" dirY="middle"  />
-            <Spider color="orange" dirX="left" dirY="center"  />
-            <Spider color="green" dirX="right" dirY="bottom"  />
+            <Spider ref={(spider) => { this.spiders.push(spider); }} color="blue" dirX="left" dirY="top" />
+            <Spider ref={(spider) => { this.spiders.push(spider); }} color="red" dirX="right" dirY="middle"  />
+            <Spider ref={(spider) => { this.spiders.push(spider); }} color="orange" dirX="left" dirY="middle"  />
+            <Spider ref={(spider) => { this.spiders.push(spider); }} color="green" dirX="right" dirY="bottom"  />
             <Spider color="drugged" />
         </div>
       </div>
     );
-  }
+    }
 }
 
 export default App;
