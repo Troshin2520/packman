@@ -59,7 +59,7 @@ class App extends Component {
         <div>
             <Spider color="blue" dirX="left" dirY="top" />
             <Spider color="red" dirX="right" dirY="middle"  />
-            <Spider color="yellow" dirX="left" dirY="center"  />
+            <Spider color="orange" dirX="left" dirY="center"  />
             <Spider color="green" dirX="right" dirY="bottom"  />
             <Spider color="drugged" />
         </div>

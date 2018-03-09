@@ -1,4 +1,6 @@
 .wall {
+    @stoneColor: rgb(160, 54, 35);
+
     width: 4rem;
     height: 4rem;
     background-color: black;
@@ -11,13 +13,13 @@
         width: 1.8rem;
         height: 0.9rem;
         margin: 0 0.1rem 0 0.1rem;
-        background-color: rgb(160, 54, 35);
+        background-color: @stoneColor;
     }
 
     &-stone-half {
         width: 0.9rem;
         height: 0.9rem;
-        background-color: rgb(160, 54, 35);
+        background-color: @stoneColor;
     }
 }
 
