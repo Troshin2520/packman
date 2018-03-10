@@ -1,2 +1,2 @@
-To compile and run the project, run `yarn start`. `npm` at the time of project development does not work correctly with `Webpack4`
+To compile and run the project, run `yarn start` or `npm start``
 
