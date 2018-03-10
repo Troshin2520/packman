@@ -1,40 +1,47 @@
-.pacman{
+.pacman {
+  width: 3rem;
+  height: 3rem;
+  z-index: 2;
+  font-size: 2rem;
+
+  &-top {
+    background-color: gold;
+    height: 1.5rem;
     width: 3rem;
-    height: 3rem;
-    z-index: 2;
-    font-size: 2rem;
+    border-radius: 1.5rem 1.5rem 0 0;
+    animation: spin-top 0.5s infinite linear;
+    z-index: 3;
+    text-align: center;
+  }
 
-    &-top{
-        background-color: gold;
-        height: 1.5rem;
-        width: 3rem;
-        border-radius: 1.5rem 1.5rem 0 0;
-        animation: spin-top 0.5s infinite linear;
-        z-index: 3;
-        text-align: center;
-    }
+  &-bottom {
+    background-color: gold;
+    height: 1.5rem;
+    width: 3rem;
+    border-radius: 0 0 1.5rem 1.5rem;
+    animation: spin-bottom 0.5s infinite linear;
+    z-index: 3;
+  }
 
-    &-bottom{
-        background-color: gold;
-        height: 1.5rem;
-        width: 3rem;
-        border-radius: 0 0 1.5rem 1.5rem;
-        animation: spin-bottom 0.5s infinite linear;
-        z-index: 3;
-    }
-
-    &-turn-top {
-        transform: rotate(270deg);
-    }
+  &-turn-top {
+    transform: rotate(270deg);
+  }
 }
 
 @keyframes spin-bottom {
-    0%  {transform: rotate(0deg);}
-    50% {transform: rotate(35deg);}
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(35deg);
+  }
 }
 
-
 @keyframes spin-top {
-    0%  {transform: rotate(0deg);}
-    50% {transform: rotate(-35deg);}
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-35deg);
+  }
 }
