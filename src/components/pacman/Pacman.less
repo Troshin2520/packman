@@ -9,7 +9,7 @@
         height: 1.5rem;
         width: 3rem;
         border-radius: 1.5rem 1.5rem 0 0;
-        animation: spin1 0.5s infinite linear;
+        animation: spin-top 0.5s infinite linear;
         z-index: 3;
         text-align: center;
     }
@@ -19,7 +19,7 @@
         height: 1.5rem;
         width: 3rem;
         border-radius: 0 0 1.5rem 1.5rem;
-        animation: spin2 0.5s infinite linear;
+        animation: spin-bottom 0.5s infinite linear;
         z-index: 3;
     }
 
@@ -28,13 +28,13 @@
     }
 }
 
-@keyframes spin2 {
+@keyframes spin-bottom {
     0%  {transform: rotate(0deg);}
     50% {transform: rotate(35deg);}
 }
 
 
-@keyframes spin1 {
+@keyframes spin-top {
     0%  {transform: rotate(0deg);}
     50% {transform: rotate(-35deg);}
 }
