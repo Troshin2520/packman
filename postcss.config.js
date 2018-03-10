@@ -1,8 +1,8 @@
 module.exports = {
-    plugins: {
-        'autoprefixer': {},
-        'postcss-cssnext': {},
-        'cssnano': {},
-        'css-mqpacker': {}
-    }
+  plugins: {
+    'autoprefixer': {},
+    'postcss-cssnext': {},
+    'cssnano': {},
+    'css-mqpacker': {}
+  }
 }
