@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breaks tests Breaks renders without crashing 1`] = `
+<div
+  className="wall"
+>
+  <div
+    className="wall-stone"
+  />
+  <div
+    className="wall-stone"
+  />
+  <div
+    className="wall-stone-half"
+  />
+  <div
+    className="wall-stone"
+  />
+  <div
+    className="wall-stone-half"
+  />
+  <div
+    className="wall-stone"
+  />
+  <div
+    className="wall-stone"
+  />
+  <div
+    className="wall-stone-half"
+  />
+  <div
+    className="wall-stone"
+  />
+  <div
+    className="wall-stone-half"
+  />
+</div>
+`;

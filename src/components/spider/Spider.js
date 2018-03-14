@@ -10,7 +10,7 @@ class Spider extends Component {
   }
 
   render() {
-    return (<div className={`spider spider-${this.state.color}
+    return (<div className={`spider spider-${this.state.color || 'drugged'}
                                 spider-direction-${this.state.dirX}
                                 spider-direction-${this.state.dirY}`}>
       <div className="spider-body">

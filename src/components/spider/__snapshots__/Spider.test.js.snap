@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spider tests Spider rendered without crushing 1`] = `
+<div
+  className="spider spider-drugged
+                                spider-direction-undefined
+                                spider-direction-undefined"
+>
+  <div
+    className="spider-body"
+  >
+    <div
+      className="spider-eyes"
+    >
+      <div
+        className="spider-pupils"
+      />
+    </div>
+    <div
+      className="spider-eyes"
+    >
+      <div
+        className="spider-pupils"
+      />
+    </div>
+  </div>
+  <div
+    className="spider-bottom"
+  >
+    <div
+      className="spider-claws"
+    >
+      <div
+        className="spider-claw"
+      />
+      <div
+        className="spider-claw"
+      />
+      <div
+        className="spider-claw"
+      />
+      <div
+        className="spider-claw"
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pacman tests Pacman rendered without crushing 1`] = `
+<div
+  className="pacman"
+>
+  <div
+    className="pacman-top"
+  >
+    •
+  </div>
+  <div
+    className="pacman-bottom"
+  />
+</div>
+`;

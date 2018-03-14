@@ -3,6 +3,10 @@ import './Gates.less';
 
 class Gates extends Component {
 
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (<div className="gates">
       <div></div>

@@ -1,5 +1,4 @@
 var rewire = require('rewire');
-var proxyquire = require('proxyquire');
 
 switch(process.argv[2]) {
     case 'start':
