@@ -3,6 +3,13 @@
   height: 3rem;
   z-index: 2;
   font-size: 2rem;
+  position: absolute;
+  margin: 0.5rem;
+
+  /*temporary coords*/
+  top: 32rem;
+  left: 24rem;
+  /*temporary coords*/
 
   &-top {
     background-color: gold;
@@ -26,22 +33,24 @@
   &-turn-top {
     transform: rotate(270deg);
   }
+
+  @keyframes spin-bottom {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(35deg);
+    }
+  }
+
+  @keyframes spin-top {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(-35deg);
+    }
+  }
+
 }
 
-@keyframes spin-bottom {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(35deg);
-  }
-}
-
-@keyframes spin-top {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(-35deg);
-  }
-}

@@ -1,9 +1,11 @@
 .spider {
+  @name: .spider;
   display: flex;
   width: 4rem;
   height: 4rem;
   flex-direction: column;
   justify-content: center;
+  position: absolute;
 
   &-body {
     border-radius: 50% 50% 0 0;
@@ -46,47 +48,9 @@
     border-radius: 100%;
   }
 
+
   &-direction-left &-bottom {
     justify-content: flex-start;
-  }
-
-  &-direction-right &-bottom {
-    justify-content: flex-end;
-  }
-
-  &-direction-left &-eyes {
-    justify-content: flex-start;
-    transition: all 0.3s ease-out;
-  }
-
-  &-direction-right &-eyes {
-    justify-content: flex-end;
-    transition: all 0.3s ease-out;
-  }
-
-  &-direction-center &-eyes {
-    justify-content: center;
-    transition: all 0.3s ease-out;
-  }
-
-  &-direction-middle &-eyes {
-    align-items: center;
-    transition: all 0.3s ease-out;
-  }
-
-  &-direction-top &-eyes {
-    align-items: flex-start;
-    transition: all 0.3s ease-out;
-  }
-
-  &-direction-bottom &-eyes {
-    align-items: flex-end;
-    transition: all 0.3s ease-out;
-  }
-
-  &-direction-right &-claws, &-direction-left &-claws {
-    width: 90%;
-    transition: all 0.3s ease-out;
   }
 
   &-drugged &-eyes {
@@ -117,6 +81,84 @@
     width: 0.6rem;
     height: 0.6rem;
   }
+
+  &.move {
+    &-left {
+      animation: move-left 1s 1 linear;
+    }
+
+    &-right {
+      animation: move-right 1s 1 linear;
+    }
+
+    &-top {
+      animation: move-top 1s 1 linear;
+    }
+
+    &-bottom {
+      animation: move-bottom 1s 1 linear;
+    }
+
+    &-right @{name}-bottom {
+      justify-content: flex-end;
+    }
+
+    &-left @{name}-eyes {
+      justify-content: flex-end;
+      align-items: center;
+      transition: all 0.3s ease-out;
+    }
+
+    &-right @{name}-eyes {
+      justify-content: flex-start;
+      align-items: center;
+      transition: all 0.3s ease-out;
+    }
+
+    &-top @{name}-eyes {
+      align-items: flex-start;
+      justify-content: center;
+      transition: all 0.3s ease-out;
+    }
+
+    &-bottom @{name}-eyes {
+      align-items: flex-end;
+      justify-content: center;
+      transition: all 0.3s ease-out;
+    }
+
+    &-right @{name}-claws, &-left @{name}-claws {
+      width: 90%;
+      transition: all 0.3s ease-out;
+    }
+
+    @keyframes move-left {
+      to {
+        transform:translateX(4rem);
+      }
+    }
+
+    @keyframes move-right {
+      100% {
+        transform:translateX(-4rem);
+      }
+    }
+
+    @keyframes move-top {
+      100% {
+        transform:translateY(-4rem);
+      }
+    }
+
+    @keyframes move-bottom {
+      100% {
+        transform:translateY(4rem);
+      }
+    }
+  }
 }
+
+
+
 
 
