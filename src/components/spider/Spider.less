@@ -1,5 +1,4 @@
 .spider {
-  @name: .spider;
   display: flex;
   width: 4rem;
   height: 4rem;
@@ -7,7 +6,7 @@
   justify-content: center;
   position: absolute;
 
-  &-body {
+  & .body {
     border-radius: 50% 50% 0 0;
     width: 4rem;
     height: 3rem;
@@ -16,31 +15,31 @@
     align-items: center;
   }
 
-  &-blue &-body, &-blue &-claw {
+  &.blue .body, &.blue .claw {
     background-color: blue;
   }
 
-  &-red &-body, &-red &-claw {
+  &.red .body, &.red .claw {
     background-color: red;
   }
 
-  &-green &-body, &-green &-claw {
+  &.green .body, &.green .claw {
     background-color: green;
   }
 
-  &-orange &-body, &-orange &-claw {
+  &.orange .body, &.orange .claw {
     background-color: orange;
   }
 
-  &-drugged &-body, &-drugged &-claw {
+  &.drugged .body, &.drugged .claw {
     background-color: lightblue;
   }
 
-  &-bottom {
+  & .bottom {
     display: flex;
   }
 
-  &-eyes {
+  & .eyes {
     display: flex;
     background-color: white;
     width: 1rem;
@@ -49,35 +48,35 @@
   }
 
 
-  &-direction-left &-bottom {
+  & .direction-left .bottom {
     justify-content: flex-start;
   }
 
-  &-drugged &-eyes {
+  &.drugged .eyes {
     justify-content: center;
     align-items: center;
     transition: all 0.3s ease-out;
   }
 
-  &-drugged &-claws {
+  &.drugged .claws {
     width: 100%;
     justify-content: space-between;
   }
 
-  &-pupils {
+  & .pupils {
     background-color: black;
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 100%;
   }
 
-  &-claws {
+  & .claws {
     width: 100%;
     display: flex;
     justify-content: space-between;
   }
 
-  &-claw {
+  & .claw {
     width: 0.6rem;
     height: 0.6rem;
   }
@@ -99,35 +98,39 @@
       animation: move-bottom 1s 1 linear;
     }
 
-    &-right @{name}-bottom {
+    &-right .bottom {
+      justify-content: flex-start;
+    }
+
+    &-left .bottom {
       justify-content: flex-end;
     }
 
-    &-left @{name}-eyes {
+    &-left .eyes {
       justify-content: flex-end;
       align-items: center;
       transition: all 0.3s ease-out;
     }
 
-    &-right @{name}-eyes {
+    &-right .eyes {
       justify-content: flex-start;
       align-items: center;
       transition: all 0.3s ease-out;
     }
 
-    &-top @{name}-eyes {
+    &-top .eyes {
       align-items: flex-start;
       justify-content: center;
       transition: all 0.3s ease-out;
     }
 
-    &-bottom @{name}-eyes {
+    &-bottom .eyes {
       align-items: flex-end;
       justify-content: center;
       transition: all 0.3s ease-out;
     }
 
-    &-right @{name}-claws, &-left @{name}-claws {
+    &-right .claws, &-left .claws {
       width: 90%;
       transition: all 0.3s ease-out;
     }

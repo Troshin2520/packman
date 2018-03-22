@@ -10,23 +10,23 @@ class Spider extends Component {
   }
 
   render() {
-    return (<div className={`spider spider-${this.state.color} move-${this.state.move}`}
+    return (<div className={`spider ${this.state.color} move-${this.state.move}`}
                  style={{top:`${this.state.y}rem`, left:`${this.state.x}rem`}}
                  onAnimationEnd={this.props.animationEnd.bind(this)}>
-              <div className="spider-body">
-                <div className="spider-eyes">
-                  <div className="spider-pupils"></div>
+              <div className="body">
+                <div className="eyes">
+                  <div className="pupils"></div>
                 </div>
-                <div className="spider-eyes">
-                  <div className="spider-pupils"></div>
+                <div className="eyes">
+                  <div className="pupils"></div>
                 </div>
               </div>
-              <div className="spider-bottom">
-                <div className="spider-claws">
-                  <div className="spider-claw"></div>
-                  <div className="spider-claw"></div>
-                  <div className="spider-claw"></div>
-                  <div className="spider-claw"></div>
+              <div className="bottom">
+                <div className="claws">
+                  <div className="claw"></div>
+                  <div className="claw"></div>
+                  <div className="claw"></div>
+                  <div className="claw"></div>
                 </div>
               </div>
             </div>);
