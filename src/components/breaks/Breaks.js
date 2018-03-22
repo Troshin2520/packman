@@ -9,16 +9,16 @@ class Breaks extends Component {
 
   render() {
     return (<div className="wall">
-      <div className="wall-stone"></div>
-      <div className="wall-stone"></div>
-      <div className="wall-stone-half"></div>
-      <div className="wall-stone"></div>
-      <div className="wall-stone-half"></div>
-      <div className="wall-stone"></div>
-      <div className="wall-stone"></div>
-      <div className="wall-stone-half"></div>
-      <div className="wall-stone"></div>
-      <div className="wall-stone-half"></div>
+      <div className="stone"></div>
+      <div className="stone"></div>
+      <div className="stone-half"></div>
+      <div className="stone"></div>
+      <div className="stone-half"></div>
+      <div className="stone"></div>
+      <div className="stone"></div>
+      <div className="stone-half"></div>
+      <div className="stone"></div>
+      <div className="stone-half"></div>
     </div>);
   }
 }
