@@ -9,8 +9,8 @@ class Pacman extends Component {
 
   render() {
     return (<div className="pacman">
-      <div className="pacman-top">&bull;</div>
-      <div className="pacman-bottom"></div>
+      <div className="top">&bull;</div>
+      <div className="bottom"></div>
     </div>);
   }
 }
