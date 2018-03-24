@@ -6,12 +6,15 @@ class Spider extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {x:0, y:0, move:'top', ...props};
+  }
+
+  shouldComponentUpdate() {
+    return true;
   }
 
   render() {
-    return (<div className={`spider ${this.state.color} move-${this.state.move}`}
-                 style={{top:`${this.state.y}rem`, left:`${this.state.x}rem`}}
+    return (<div className={`spider ${this.props.color} move-${this.props.move}`}
+                 style={{top:`${this.props.y}rem`, left:`${this.props.x}rem`}}
                  onAnimationEnd={this.props.animationEnd.bind(this)}>
               <div className="body">
                 <div className="eyes">

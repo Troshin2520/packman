@@ -3,14 +3,21 @@
 exports[`Pacman tests Pacman rendered without crushing 1`] = `
 <div
   className="pacman"
+  onAnimationEnd={[Function]}
+  style={
+    Object {
+      "left": "undefinedrem",
+      "top": "undefinedrem",
+    }
+  }
 >
   <div
-    className="pacman-top"
+    className="top"
   >
     •
   </div>
   <div
-    className="pacman-bottom"
+    className="bottom"
   />
 </div>
 `;

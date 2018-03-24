@@ -17,7 +17,7 @@ describe('Spider tests', () => {
 
   it('Spider props checked', () => {
     const wrapper = mount(<Spider color="red" move="top" animationEnd={()=>{}} />);
-    expect(wrapper.find('.spider').hasClass('spider-red')).toBeTruthy();
+    expect(wrapper.find('.spider').hasClass('red')).toBeTruthy();
     expect(wrapper.find('.spider').hasClass('move-top')).toBeTruthy();
   });
 

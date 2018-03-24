@@ -2,50 +2,50 @@
 
 exports[`Spider tests Spider rendered without crushing 1`] = `
 <div
-  className="spider spider-red move-top"
+  className="spider red move-top"
   onAnimationEnd={[Function]}
   style={
     Object {
-      "left": "0rem",
-      "top": "0rem",
+      "left": "undefinedrem",
+      "top": "undefinedrem",
     }
   }
 >
   <div
-    className="spider-body"
+    className="body"
   >
     <div
-      className="spider-eyes"
+      className="eyes"
     >
       <div
-        className="spider-pupils"
+        className="pupils"
       />
     </div>
     <div
-      className="spider-eyes"
+      className="eyes"
     >
       <div
-        className="spider-pupils"
+        className="pupils"
       />
     </div>
   </div>
   <div
-    className="spider-bottom"
+    className="bottom"
   >
     <div
-      className="spider-claws"
+      className="claws"
     >
       <div
-        className="spider-claw"
+        className="claw"
       />
       <div
-        className="spider-claw"
+        className="claw"
       />
       <div
-        className="spider-claw"
+        className="claw"
       />
       <div
-        className="spider-claw"
+        className="claw"
       />
     </div>
   </div>

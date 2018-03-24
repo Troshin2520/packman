@@ -6,7 +6,7 @@ describe('Pacman tests', () => {
 
   it('Pacman rendered without crushing', () => {
     const component = Renderer.create(
-      <Pacman />
+      <Pacman animationEnd={()=>{}} />
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
