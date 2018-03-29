@@ -2,12 +2,12 @@
 
 exports[`Spider tests Spider rendered without crushing 1`] = `
 <div
-  className="spider red move-top"
+  className="spider red move-top turn-top"
   onAnimationEnd={[Function]}
   style={
     Object {
-      "left": "undefinedrem",
-      "top": "undefinedrem",
+      "left": "24rem",
+      "top": "24rem",
     }
   }
 >

@@ -6,8 +6,8 @@ exports[`Pacman tests Pacman rendered without crushing 1`] = `
   onAnimationEnd={[Function]}
   style={
     Object {
-      "left": "undefinedrem",
-      "top": "undefinedrem",
+      "left": "24rem",
+      "top": "32rem",
     }
   }
 >

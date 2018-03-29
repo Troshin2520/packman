@@ -5,34 +5,34 @@ exports[`Breaks tests Breaks renders without crashing 1`] = `
   className="wall"
 >
   <div
-    className="wall-stone"
+    className="stone"
   />
   <div
-    className="wall-stone"
+    className="stone"
   />
   <div
-    className="wall-stone-half"
+    className="stone-half"
   />
   <div
-    className="wall-stone"
+    className="stone"
   />
   <div
-    className="wall-stone-half"
+    className="stone-half"
   />
   <div
-    className="wall-stone"
+    className="stone"
   />
   <div
-    className="wall-stone"
+    className="stone"
   />
   <div
-    className="wall-stone-half"
+    className="stone-half"
   />
   <div
-    className="wall-stone"
+    className="stone"
   />
   <div
-    className="wall-stone-half"
+    className="stone-half"
   />
 </div>
 `;

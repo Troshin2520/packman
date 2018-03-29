@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux';
-import zone from './zone';
+import field from './field';
+import spiders from './spiders';
+import pacman from './pacman';
 
 export default combineReducers({
-  zone
+  field,
+  spiders,
+  pacman
 });

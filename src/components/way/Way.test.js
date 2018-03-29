@@ -22,7 +22,7 @@ describe('Way testing', () => {
   });
 
   it('`pill` attribute added successfully', () => {
-    const wrapper = mount(<Way has="feed"/>);
+    const wrapper = mount(<Way has={1} />);
     expect(wrapper.find('.way').hasClass('feed')).toBeTruthy();
   });
 

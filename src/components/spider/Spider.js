@@ -1,21 +1,36 @@
 import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import './Spider.less';
+import {ACTION_MOVE_SPIDER, BLOCK_SIZE} from '../../constants';
 
 class Spider extends Component {
 
   constructor(props) {
     super(props);
+    this.onAnimationEnd = this.onAnimationEnd.bind(this);
   }
 
-  shouldComponentUpdate() {
-    return true;
+  componentWillUpdate() {
+    const node = ReactDOM.findDOMNode(this);
+    if(node) {
+      node.style.animation = 'none';
+      node.offsetHeight;
+      node.style.animation = '';
+    }
   }
+
+  onAnimationEnd() {
+    const {onChangeState, ...params} = this.props;
+    this.props.onChangeState(ACTION_MOVE_SPIDER, params);
+  }
+
 
   render() {
-    return (<div className={`spider ${this.props.color} move-${this.props.move}`}
-                 style={{top:`${this.props.y}rem`, left:`${this.props.x}rem`}}
-                 onAnimationEnd={this.props.animationEnd.bind(this)}>
+    return (<div className={`spider ${this.props.color} move-${this.props.move} turn-${this.props.move}`}
+                 style={{top:`${this.props.y * BLOCK_SIZE}rem`, left:`${this.props.x * BLOCK_SIZE}rem`}}
+                 onAnimationEnd={this.onAnimationEnd}>
               <div className="body">
                 <div className="eyes">
                   <div className="pupils"></div>
@@ -38,10 +53,17 @@ class Spider extends Component {
 
 Spider.propTypes = {
   color: PropTypes.oneOf(['red', 'green', 'blue', 'orange', 'drugged']).isRequired,
-  move: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
-  x: PropTypes.number,
-  y: PropTypes.number,
-  animationEnd: PropTypes.func.isRequired
+  move: PropTypes.oneOf(['top', 'bottom', 'left', 'right']).isRequired,
+  x: PropTypes.number.isRequired,
+  y: PropTypes.number.isRequired
 };
 
-export default Spider;
+
+export default connect(
+  (state, props) => state.spiders[props.color],
+  dispatch => ({
+    onChangeState(type, item) {
+      dispatch({type: type, payload: item});
+    }
+  })
+)(Spider);
