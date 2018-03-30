@@ -11,11 +11,10 @@ import Gates from './components/gates/Gates';
 import './App.less';
 import {ACTION_CHANGE_ZONE} from './constants';
 
-//const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-
 const store = createStore(
   reducer,
-  applyMiddleware(game));
+  applyMiddleware(game),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 class App extends Component {
 
