@@ -1,4 +1,4 @@
-describe('Game tests', () => {
+describe('Reducers tests', () => {
 
   it('to do', () => {
   });
