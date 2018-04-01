@@ -9,7 +9,13 @@ Enzyme.configure({ adapter: new Adapter() });
 
 describe('Spider tests', () => {
 
-  const initialState = {spiders:{red: {x: 6, y: 6, move: 'top'}}};
+  const initialState = {spiders:{
+      red: {x: 6, y: 6, move: 'top'},
+      green: {x: 6, y: 6, move: 'top'},
+      blue: {x: 6, y: 6, move: 'top'},
+      orange: {x: 6, y: 6, move: 'top'}
+  }};
+
   const mockStore = configureStore();
   const store = mockStore(initialState);
 
@@ -21,11 +27,29 @@ describe('Spider tests', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('Spider props checked', () => {
-    const component = mount(<Spider color="red" store={store}/>);
-    expect(component.find('.spider').hasClass('red')).toBeTruthy();
-    expect(component.find('.spider').hasClass('move-top')).toBeTruthy();
-    expect(component.find('.spider').hasClass('turn-top')).toBeTruthy();
+  it('Spider rendered without crushing', () => {
+    const component = Renderer.create(
+      <Spider color="green" store={store}/>
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
   });
+
+  it('Spider rendered without crushing', () => {
+    const component = Renderer.create(
+      <Spider color="blue" store={store}/>
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('Spider rendered without crushing', () => {
+    const component = Renderer.create(
+      <Spider color="orange" store={store}/>
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
 
 });

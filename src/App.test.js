@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Enzyme, {mount} from 'enzyme';
+import {mount} from 'enzyme';
 import configureStore from 'redux-mock-store';
 import Renderer from 'react-test-renderer';
 import App from './App';

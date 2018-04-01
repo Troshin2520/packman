@@ -51,3 +51,159 @@ exports[`Spider tests Spider rendered without crushing 1`] = `
   </div>
 </div>
 `;
+
+exports[`Spider tests Spider rendered without crushing 2`] = `
+<div
+  className="spider green move-top turn-top"
+  onAnimationEnd={[Function]}
+  style={
+    Object {
+      "left": "24rem",
+      "top": "24rem",
+    }
+  }
+>
+  <div
+    className="body"
+  >
+    <div
+      className="eyes"
+    >
+      <div
+        className="pupils"
+      />
+    </div>
+    <div
+      className="eyes"
+    >
+      <div
+        className="pupils"
+      />
+    </div>
+  </div>
+  <div
+    className="bottom"
+  >
+    <div
+      className="claws"
+    >
+      <div
+        className="claw"
+      />
+      <div
+        className="claw"
+      />
+      <div
+        className="claw"
+      />
+      <div
+        className="claw"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Spider tests Spider rendered without crushing 3`] = `
+<div
+  className="spider blue move-top turn-top"
+  onAnimationEnd={[Function]}
+  style={
+    Object {
+      "left": "24rem",
+      "top": "24rem",
+    }
+  }
+>
+  <div
+    className="body"
+  >
+    <div
+      className="eyes"
+    >
+      <div
+        className="pupils"
+      />
+    </div>
+    <div
+      className="eyes"
+    >
+      <div
+        className="pupils"
+      />
+    </div>
+  </div>
+  <div
+    className="bottom"
+  >
+    <div
+      className="claws"
+    >
+      <div
+        className="claw"
+      />
+      <div
+        className="claw"
+      />
+      <div
+        className="claw"
+      />
+      <div
+        className="claw"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Spider tests Spider rendered without crushing 4`] = `
+<div
+  className="spider orange move-top turn-top"
+  onAnimationEnd={[Function]}
+  style={
+    Object {
+      "left": "24rem",
+      "top": "24rem",
+    }
+  }
+>
+  <div
+    className="body"
+  >
+    <div
+      className="eyes"
+    >
+      <div
+        className="pupils"
+      />
+    </div>
+    <div
+      className="eyes"
+    >
+      <div
+        className="pupils"
+      />
+    </div>
+  </div>
+  <div
+    className="bottom"
+  >
+    <div
+      className="claws"
+    >
+      <div
+        className="claw"
+      />
+      <div
+        className="claw"
+      />
+      <div
+        className="claw"
+      />
+      <div
+        className="claw"
+      />
+    </div>
+  </div>
+</div>
+`;
