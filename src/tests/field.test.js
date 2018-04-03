@@ -66,7 +66,7 @@ describe('field functions tests', () => {
   });
 
 
-  it('getAvailableDirections function tested', () => {
+  it('wrapArrayByZerros function tested', () => {
     const result = api.wrapArrayByZerros(field);
     const height = field.length + 2;
     const width = field[0].length + 2;
@@ -82,5 +82,5 @@ describe('field functions tests', () => {
 
   });
 
-  
+
 });
