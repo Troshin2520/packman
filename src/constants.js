@@ -4,6 +4,8 @@ export const ACTION_CHANGE_PACMAN_DIRECTION = 'CHANGE_PACMAN_DIRECTION';
 export const ACTION_CHANGE_ZONE = 'CHANGE_ZONE';
 export const ACTION_MOVE_SPIDER = 'MOVE_SPIDER';
 export const ACTION_MOVE_PACMAN = 'MOVE_PACMAN';
+export const ACTION_PACMAN_EAT = 'PACMAN_EAT';
+export const ACTION_FEED_ATE = 'FEED_ATE';
 
 export const zones = [
   {

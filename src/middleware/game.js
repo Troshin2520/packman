@@ -1,5 +1,8 @@
 import * as api from '../api/field';
-import {ACTION_MOVE_SPIDER, ACTION_MOVE_PACMAN, ACTION_CHANGE_PACMAN_DIRECTION} from '../constants';
+import {ACTION_MOVE_SPIDER,
+        ACTION_MOVE_PACMAN,
+        ACTION_CHANGE_PACMAN_DIRECTION, ACTION_CHANGE_ZONE,
+        ACTION_PACMAN_EAT} from '../constants';
 
 
 export const game = store => next => (action) => {
@@ -38,14 +41,18 @@ export const game = store => next => (action) => {
       let dir = api.getDirectionFromCode(action.payload);
       action.payload = {next: dir};
       if(state.pacman.move === 'no') {
-        var pt = api.increasePoint({x: state.pacman.x, y:state.pacman.y}, action.payload);
+        var pt = api.increasePoint({x: state.pacman.x, y: state.pacman.y}, action.payload);
         var dirs = api.getAvailableDirections(pt, field);
         if(dirs.includes(dir)) {
           action.payload.move = dir;
         }
       }
       break;
-      
+
+    case ACTION_PACMAN_EAT:
+      action.payload = api.increasePoint({x: state.pacman.x, y: state.pacman.y}, state.pacman.move);
+      break;
+
     default:
   }
   return next(action)

@@ -4,13 +4,17 @@ const initialState = zones[0].spiders;
 
 const spidersReducer = (state = initialState, action) => {
 
-  if (action.type === ACTION_CHANGE_ZONE) {
-    return zones[action.payload].spiders;
-  }
-  if (action.type === ACTION_MOVE_SPIDER) {
-    return update(state,{[action.payload.color]: {$set: action.payload}});
+  switch (action.type) {
+    case ACTION_CHANGE_ZONE:
+      return zones[action.payload].spiders;
+      break;
+    case ACTION_MOVE_SPIDER:
+      return update(state,{[action.payload.color]: {$set: action.payload}});
+      break;
+    default:
   }
   return state;
+
 }
 
 export default spidersReducer;

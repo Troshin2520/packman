@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import './Pacman.less';
-import {ACTION_MOVE_PACMAN, BLOCK_SIZE} from '../../constants';
+import {ACTION_MOVE_PACMAN, ACTION_PACMAN_EAT, BLOCK_SIZE} from '../../constants';
 import ReactDOM from "react-dom";
 
 class Pacman extends Component {
@@ -41,6 +41,7 @@ class Pacman extends Component {
 
   updatePosition() {
     const {onChangeState, ...params} = this.props;
+    this.props.onChangeState(ACTION_PACMAN_EAT, params);
     this.props.onChangeState(ACTION_MOVE_PACMAN, params);
   }
 
