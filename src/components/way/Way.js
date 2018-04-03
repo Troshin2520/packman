@@ -33,7 +33,13 @@ class Way extends Component {
 }
 
 Way.propTypes = {
-  has: PropTypes.number
+  has: PropTypes.oneOf([0,1,2]),
+  x: PropTypes.number.isRequired,
+  y: PropTypes.number.isRequired
+};
+
+Way.defaultProps = {
+  has: 0
 };
 
 export default connect(

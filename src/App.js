@@ -61,7 +61,7 @@ class App extends Component {
             case 0:
             case 1:
             case 2:
-              return <Way x={j} y={i} key={key} has={cell}/>
+              return <Way x={j} y={i} key={key} />
             case 4:
               return <Breaks key={key}/>
             case 8:
