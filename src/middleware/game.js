@@ -3,7 +3,8 @@ import {ACTION_MOVE_SPIDER, ACTION_MOVE_PACMAN, ACTION_CHANGE_PACMAN_DIRECTION} 
 
 
 export const game = store => next => (action) => {
-  const field = store.getState().field || [];
+  const state = store.getState();
+  const field = state.field || [];
   switch (action.type) {
     case ACTION_MOVE_SPIDER:
       var pt = api.increasePoint({x:action.payload.x, y: action.payload.y}, action.payload.move);
@@ -26,15 +27,25 @@ export const game = store => next => (action) => {
       if(dirs.includes(action.payload.next)) {
         action.payload.move = action.payload.next;
       }
-      if(dirs.includes(action.payload.move)) {
-        action.payload.x = pt.x;
-        action.payload.y = pt.y;
+      if(!dirs.includes(action.payload.move)) {
+        action.payload.move = 'no';
       }
+      action.payload.x = pt.x;
+      action.payload.y = pt.y;
       break;
 
     case ACTION_CHANGE_PACMAN_DIRECTION:
-      action.payload = api.getDirectionFromCode(action.payload);
+      let dir = api.getDirectionFromCode(action.payload);
+      action.payload = {next: dir};
+      if(state.pacman.move === 'no') {
+        var pt = api.increasePoint({x: state.pacman.x, y:state.pacman.y}, action.payload);
+        var dirs = api.getAvailableDirections(pt, field);
+        if(dirs.includes(dir)) {
+          action.payload.move = dir;
+        }
+      }
       break;
+      
     default:
   }
   return next(action)
