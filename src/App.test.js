@@ -5,7 +5,6 @@ import Renderer from 'react-test-renderer';
 import App from './App';
 
 
-
 it('App renders without crashing', () => {
 
   const initialState = {
@@ -16,7 +15,7 @@ it('App renders without crashing', () => {
     speed: 0.6,
     pacman: {x: 6, y: 8, dir: 'left'},
     spiders: {
-      red:{x: 6, y: 6, move: 'up'}
+      red: {x: 6, y: 6, move: 'up'}
     },
   };
 

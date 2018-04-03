@@ -7,7 +7,7 @@ describe('Gates tests', () => {
 
   it('Gates renders without crushing', () => {
     const component = Renderer.create(
-      <Gates />
+      <Gates/>
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

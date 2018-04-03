@@ -5,23 +5,25 @@ import Enzyme, {mount} from 'enzyme';
 import Adapter from "enzyme-adapter-react-16";
 import Spider from './Spider';
 
-Enzyme.configure({ adapter: new Adapter() });
+Enzyme.configure({adapter: new Adapter()});
 
 describe('Spider tests', () => {
 
-  const initialState = {spiders:{
+  const initialState = {
+    spiders: {
       red: {x: 6, y: 6, move: 'up'},
       green: {x: 6, y: 6, move: 'up'},
       blue: {x: 6, y: 6, move: 'up'},
       orange: {x: 6, y: 6, move: 'up'}
-  }};
+    }
+  };
 
   const mockStore = configureStore();
   const store = mockStore(initialState);
 
   it('Spider rendered without crushing', () => {
     const component = Renderer.create(
-        <Spider color="red" store={store}/>
+      <Spider color="red" store={store}/>
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

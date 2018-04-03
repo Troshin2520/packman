@@ -13,7 +13,7 @@ describe('Actions tests', () => {
     speed: 0.6,
     pacman: {x: 6, y: 8, dir: 'left'},
     spiders: {
-      red:{x: 6, y: 6, move: 'up'}
+      red: {x: 6, y: 6, move: 'up'}
     }
   };
 

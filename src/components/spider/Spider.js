@@ -14,7 +14,7 @@ class Spider extends Component {
 
   componentWillUpdate() {
     const node = ReactDOM.findDOMNode(this);
-    if(node) {
+    if (node) {
       node.style.animation = 'none';
       node.offsetHeight;
       node.style.animation = '';
@@ -29,25 +29,25 @@ class Spider extends Component {
 
   render() {
     return (<div className={`spider ${this.props.color} move-${this.props.move} turn-${this.props.move}`}
-                 style={{top:`${this.props.y * BLOCK_SIZE}rem`, left:`${this.props.x * BLOCK_SIZE}rem`}}
+                 style={{top: `${this.props.y * BLOCK_SIZE}rem`, left: `${this.props.x * BLOCK_SIZE}rem`}}
                  onAnimationEnd={this.onAnimationEnd}>
-              <div className="body">
-                <div className="eyes">
-                  <div className="pupils"></div>
-                </div>
-                <div className="eyes">
-                  <div className="pupils"></div>
-                </div>
-              </div>
-              <div className="bottom">
-                <div className="claws">
-                  <div className="claw"></div>
-                  <div className="claw"></div>
-                  <div className="claw"></div>
-                  <div className="claw"></div>
-                </div>
-              </div>
-            </div>);
+      <div className="body">
+        <div className="eyes">
+          <div className="pupils"></div>
+        </div>
+        <div className="eyes">
+          <div className="pupils"></div>
+        </div>
+      </div>
+      <div className="bottom">
+        <div className="claws">
+          <div className="claw"></div>
+          <div className="claw"></div>
+          <div className="claw"></div>
+          <div className="claw"></div>
+        </div>
+      </div>
+    </div>);
   }
 }
 

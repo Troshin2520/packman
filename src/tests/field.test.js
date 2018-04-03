@@ -74,7 +74,7 @@ describe('field functions tests', () => {
     expect(result).toHaveLength(height);
     expect(result[0]).toEqual(expect.arrayContaining(Array(width).fill(0)));
     expect(result[height - 1]).toEqual(expect.arrayContaining(Array(width).fill(0)));
-    result.forEach(function(row, i) {
+    result.forEach(function (row, i) {
       expect(row).toHaveLength(width);
       expect(row[0]).toEqual(0);
       expect(row[width - 1]).toEqual(0);

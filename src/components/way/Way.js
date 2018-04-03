@@ -12,14 +12,14 @@ class Way extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    if(this.props.x === nextProps.x && this.props.y === nextProps.y) {
+    if (this.props.x === nextProps.x && this.props.y === nextProps.y) {
       return true;
     }
     return false;
   }
 
   componentWillUpdate() {
-    if(this.props.has === 2 || this.props.has === 1) {
+    if (this.props.has === 2 || this.props.has === 1) {
       this.props.onChangeState(ACTION_FEED_ATE, {type: this.props.has});
     }
   }
@@ -33,7 +33,7 @@ class Way extends Component {
 }
 
 Way.propTypes = {
-  has: PropTypes.oneOf([0,1,2]),
+  has: PropTypes.oneOf([0, 1, 2]),
   x: PropTypes.number.isRequired,
   y: PropTypes.number.isRequired
 };

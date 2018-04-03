@@ -28,10 +28,10 @@ class App extends Component {
   }
 
   updateZone() {
-    if(typeof this.next !== 'undefined') {
+    if (typeof this.next !== 'undefined') {
       store.dispatch({type: ACTION_CHANGE_ZONE, payload: this.next});
       this.setState(store.getState());
-      if(this.next < 2) {
+      if (this.next < 2) {
         this.next++;
       }
     }
@@ -39,7 +39,7 @@ class App extends Component {
 
   componentDidMount() {
     document.addEventListener('keydown', function (e) {
-      if(['ArrowRight','ArrowLeft','ArrowDown','ArrowUp'].includes(e.code))
+      if (['ArrowRight', 'ArrowLeft', 'ArrowDown', 'ArrowUp'].includes(e.code))
         store.dispatch({type: ACTION_CHANGE_PACMAN_DIRECTION, payload: e.code});
     });
   }
@@ -50,7 +50,7 @@ class App extends Component {
     const state = store.getState();
 
     const spiders = Object.keys(state.spiders).map((color, i) => {
-      return <Spider key={`s${i}`} color={color} />;
+      return <Spider key={`s${i}`} color={color}/>;
     });
 
     const field = state.field.map((line, i) => {
@@ -61,7 +61,7 @@ class App extends Component {
             case 0:
             case 1:
             case 2:
-              return <Way x={j} y={i} key={key} />
+              return <Way x={j} y={i} key={key}/>
             case 4:
               return <Breaks key={key}/>
             case 8:
@@ -73,14 +73,14 @@ class App extends Component {
       </div>)
     });
     return (<Provider store={store}>
-              <div className="App">
-                <div className="field">
-                  <Pacman />
-                  {spiders}
-                  {field}
-                </div>
-              </div>
-            </Provider>);
+      <div className="App">
+        <div className="field">
+          <Pacman/>
+          {spiders}
+          {field}
+        </div>
+      </div>
+    </Provider>);
   }
 }
 

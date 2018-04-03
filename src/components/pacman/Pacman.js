@@ -14,9 +14,9 @@ class Pacman extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    if(this.props.x === nextProps.x &&
-       this.props.y === nextProps.y &&
-       this.props.move === nextProps.move) {
+    if (this.props.x === nextProps.x &&
+      this.props.y === nextProps.y &&
+      this.props.move === nextProps.move) {
       return false;
     }
     return true;
@@ -24,7 +24,7 @@ class Pacman extends Component {
 
   componentWillUpdate() {
     const node = ReactDOM.findDOMNode(this);
-    if(node) {
+    if (node) {
       node.style.animation = 'none';
       node.offsetHeight;
       node.style.animation = '';
@@ -47,13 +47,13 @@ class Pacman extends Component {
 
   render() {
     return (<div className={`pacman  move-${this.props.move}`}
-                 style={{top:`${this.props.y * BLOCK_SIZE}rem`, left:`${this.props.x * BLOCK_SIZE}rem` }}
+                 style={{top: `${this.props.y * BLOCK_SIZE}rem`, left: `${this.props.x * BLOCK_SIZE}rem`}}
                  onAnimationEnd={this.onAnimationEnd}>
-              <div className={`turn-${this.props.move}`}>
-                <div className="top">&bull;</div>
-                <div className="bottom"></div>
-              </div>
-            </div>);
+      <div className={`turn-${this.props.move}`}>
+        <div className="top">&bull;</div>
+        <div className="bottom"></div>
+      </div>
+    </div>);
   }
 }
 

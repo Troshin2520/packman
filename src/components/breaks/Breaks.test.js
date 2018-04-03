@@ -6,7 +6,7 @@ describe('Breaks tests', () => {
 
   it('Breaks renders without crashing', () => {
     const component = Renderer.create(
-      <Breaks />
+      <Breaks/>
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

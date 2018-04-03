@@ -5,20 +5,21 @@ import Adapter from "enzyme-adapter-react-16";
 import configureStore from 'redux-mock-store';
 import Way from './Way';
 
-Enzyme.configure({ adapter: new Adapter() });
+Enzyme.configure({adapter: new Adapter()});
 
 describe('Way testing', () => {
 
-  const initialState = {field: [[4, 0, 4],
-                                [0, 1, 2],
-                                [4, 4, 4]
-                              ]};
+  const initialState = {
+    field: [[4, 0, 4],
+      [0, 1, 2],
+      [4, 4, 4]]
+  };
   const mockStore = configureStore();
   const store = mockStore(initialState);
 
   it('Way rendered without crushing', () => {
     const component = Renderer.create(
-      <Way store={store} x={0} y={1}  />
+      <Way store={store} x={0} y={1}/>
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();

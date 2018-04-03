@@ -27,10 +27,10 @@ export const zones = [
     speed: 0.6,
     pacman: {x: 6, y: 8, move: 'no', next: 'no'},
     spiders: {
-      red:{x: 6, y: 6, move: 'up'},
-      green:{x: 6, y: 6, move: 'up'},
-      orange:{x: 5, y: 6, move: 'up'},
-      blue:{x: 7, y: 6, move: 'up'}
+      red: {x: 6, y: 6, move: 'up'},
+      green: {x: 6, y: 6, move: 'up'},
+      orange: {x: 5, y: 6, move: 'up'},
+      blue: {x: 7, y: 6, move: 'up'}
     },
   },
   {
@@ -53,10 +53,10 @@ export const zones = [
     speed: 0.5,
     pacman: {x: 6, y: 8, move: 'no', next: 'no'},
     spiders: {
-      red:{x: 6, y: 6, move: 'up'},
-      green:{x: 6, y: 6, move: 'right'},
-      orange:{x: 5, y: 6, move: 'left'},
-      blue:{x: 7, y: 6, move: 'down'}
+      red: {x: 6, y: 6, move: 'up'},
+      green: {x: 6, y: 6, move: 'right'},
+      orange: {x: 5, y: 6, move: 'left'},
+      blue: {x: 7, y: 6, move: 'down'}
     }
   },
   {
@@ -81,10 +81,10 @@ export const zones = [
     speed: 0.4,
     pacman: {x: 6, y: 9, move: 'no', next: 'no'},
     spiders: {
-      red:{x: 6, y: 7, move: 'up'},
-      green:{x: 6, y: 7, move: 'right'},
-      orange:{x: 5, y: 7, move: 'left'},
-      blue:{x: 7, y: 7, move: 'down'}
+      red: {x: 6, y: 7, move: 'up'},
+      green: {x: 6, y: 7, move: 'right'},
+      orange: {x: 5, y: 7, move: 'left'},
+      blue: {x: 7, y: 7, move: 'down'}
     }
   }
 ];
