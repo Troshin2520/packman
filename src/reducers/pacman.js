@@ -12,11 +12,11 @@ const pacmanReducer = (state = initialState, action) => {
       return update(state,{$merge: action.payload});
       break;
     case ACTION_CHANGE_PACMAN_DIRECTION:
-      let result = update(state, {$merge: {next: action.payload}});
+      let mergeObject = {next: action.payload};
       if(result.move === 'no') {
-        result = update(state, {$merge: {move: action.payload}});
+        mergeObject.move = action.payload;
       }
-      return result;
+      return update(state, {$merge: mergeObject});;
       break;
     default:
   }
