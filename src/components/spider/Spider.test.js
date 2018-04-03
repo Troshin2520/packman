@@ -10,10 +10,10 @@ Enzyme.configure({ adapter: new Adapter() });
 describe('Spider tests', () => {
 
   const initialState = {spiders:{
-      red: {x: 6, y: 6, move: 'top'},
-      green: {x: 6, y: 6, move: 'top'},
-      blue: {x: 6, y: 6, move: 'top'},
-      orange: {x: 6, y: 6, move: 'top'}
+      red: {x: 6, y: 6, move: 'up'},
+      green: {x: 6, y: 6, move: 'up'},
+      blue: {x: 6, y: 6, move: 'up'},
+      orange: {x: 6, y: 6, move: 'up'}
   }};
 
   const mockStore = configureStore();

@@ -3,40 +3,67 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import './Pacman.less';
 import {ACTION_MOVE_PACMAN, BLOCK_SIZE} from '../../constants';
+import ReactDOM from "react-dom";
 
 class Pacman extends Component {
 
   constructor(props) {
     super(props);
+    this.onAnimationEnd = this.onAnimationEnd.bind(this);
+    this.updatePosition = this.updatePosition.bind(this);
   }
 
-  shouldComponentUpdate() {
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log(this.props.move, nextProps.move);
+    if(this.props.x === nextProps.x &&
+       this.props.y === nextProps.y &&
+       this.props.move === nextProps.move) {
+      return false;
+    }
     return true;
   }
 
-  onAnimationEnd() {
+  componentWillUpdate() {
+    const node = ReactDOM.findDOMNode(this);
+    if(node) {
+      node.style.animation = 'none';
+      node.offsetHeight;
+      node.style.animation = '';
+    }
+  }
 
+  componentDidMount() {
+    this.updatePosition();
+  }
+
+  onAnimationEnd() {
+    this.updatePosition();
+  }
+
+  updatePosition() {
+    const {onChangeState, ...params} = this.props;
+    this.props.onChangeState(ACTION_MOVE_PACMAN, params);
   }
 
   render() {
-    return (<div className="pacman"
-                 style={{top:`${this.props.y * BLOCK_SIZE}rem`, left:`${this.props.x * BLOCK_SIZE}rem`}}
+    return (<div className={`pacman  move-${this.props.move}`}
+                 style={{top:`${this.props.y * BLOCK_SIZE}rem`, left:`${this.props.x * BLOCK_SIZE}rem` }}
                  onAnimationEnd={this.onAnimationEnd}>
-              <div className="top">&bull;</div>
-              <div className="bottom"></div>
+              <div className={`turn-${this.props.move}`}>
+                <div className="top">&bull;</div>
+                <div className="bottom"></div>
+              </div>
             </div>);
   }
 }
 
 Pacman.propTypes = {
-  x: PropTypes.number,
-  y: PropTypes.number
+  next: PropTypes.oneOf(['up', 'down', 'left', 'right', 'no']).isRequired,
+  move: PropTypes.oneOf(['up', 'down', 'left', 'right', 'no']).isRequired,
+  x: PropTypes.number.isRequired,
+  y: PropTypes.number.isRequired
 };
 
-Pacman.defaultProps = {
-  x: 0,
-  y: 0
-};
 
 export default connect(
   state => state.pacman,

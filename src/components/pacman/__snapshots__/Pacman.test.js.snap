@@ -2,7 +2,7 @@
 
 exports[`Pacman tests Pacman rendered without crushing 1`] = `
 <div
-  className="pacman"
+  className="pacman  move-left"
   onAnimationEnd={[Function]}
   style={
     Object {
@@ -12,12 +12,16 @@ exports[`Pacman tests Pacman rendered without crushing 1`] = `
   }
 >
   <div
-    className="top"
+    className="turn-left"
   >
-    •
+    <div
+      className="top"
+    >
+      •
+    </div>
+    <div
+      className="bottom"
+    />
   </div>
-  <div
-    className="bottom"
-  />
 </div>
 `;

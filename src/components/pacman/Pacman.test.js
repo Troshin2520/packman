@@ -6,7 +6,7 @@ import Pacman from './Pacman';
 
 describe('Pacman tests', () => {
 
-  const initialState = {pacman:{x: 6, y: 8, dir: 'left'}};
+  const initialState = {pacman:{x: 6, y: 8, move: 'left', next: 'up'}};
   const mockStore = configureStore();
   const store = mockStore(initialState);
 

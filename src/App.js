@@ -9,7 +9,7 @@ import Spider from './components/spider/Spider';
 import Way from './components/way/Way';
 import Gates from './components/gates/Gates';
 import './App.less';
-import {ACTION_CHANGE_ZONE} from './constants';
+import {ACTION_CHANGE_ZONE, ACTION_CHANGE_PACMAN_DIRECTION} from './constants';
 
 const store = createStore(
   reducer,
@@ -28,7 +28,7 @@ class App extends Component {
   }
 
   updateZone() {
-    if(typeof this.next != 'undefined') {
+    if(typeof this.next !== 'undefined') {
       store.dispatch({type: ACTION_CHANGE_ZONE, payload: this.next});
       this.setState(store.getState());
       if(this.next < 2) {
@@ -38,8 +38,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    document.addEventListener('keyup', function (e) {
-      console.log(e);
+    document.addEventListener('keydown', function (e) {
+      if(['ArrowRight','ArrowLeft','ArrowDown','ArrowUp'].includes(e.code))
+        store.dispatch({type: ACTION_CHANGE_PACMAN_DIRECTION, payload: e.code});
     });
   }
 
@@ -71,7 +72,6 @@ class App extends Component {
         })}
       </div>)
     });
-
     return (<Provider store={store}>
               <div className="App">
                 <div className="field">

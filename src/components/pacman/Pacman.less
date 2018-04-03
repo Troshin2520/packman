@@ -25,8 +25,20 @@
     z-index: 3;
   }
 
-  & .turn-top {
-    transform: rotate(270deg);
+  & .turn-up {
+    transform: rotate(-90deg);
+  }
+
+  & .turn-right {
+    transform: rotate(0deg);
+  }
+
+  & .turn-left {
+    transform: rotate(180deg) scale(1, -1);
+  }
+
+  & .turn-down {
+    transform: rotate(90deg);
   }
 
   @keyframes spin-bottom {
@@ -44,6 +56,55 @@
     }
     50% {
       transform: rotate(-35deg);
+    }
+  }
+
+  &.move {
+    &-left, &-right, &-up, &-down {
+      animation-duration: 0.6s;
+      animation-direction: normal;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+    }
+    &-left {
+      animation-name: p-move-left;
+    }
+
+    &-right {
+      animation-name: p-move-right;
+    }
+
+    &-up {
+      animation-name: p-move-up;
+    }
+
+    &-down {
+      animation-name: p-move-down;
+    }
+
+    @keyframes p-move-left {
+      to {
+        transform:translateX(-4rem);
+      }
+    }
+
+    @keyframes p-move-right {
+      to {
+        transform:translateX(4rem);
+      }
+    }
+
+    @keyframes p-move-up {
+      to {
+        transform:translateY(-4rem);
+      }
+    }
+
+    @keyframes p-move-down {
+      to {
+        transform:translateY(4rem);
+      }
     }
   }
 
