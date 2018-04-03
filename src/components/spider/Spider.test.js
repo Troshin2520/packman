@@ -2,7 +2,7 @@ import React from 'react';
 import Renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store';
 import Enzyme, {mount} from 'enzyme';
-import Adapter from "enzyme-adapter-react-16";
+import Adapter from 'enzyme-adapter-react-16';
 import Spider from './Spider';
 
 Enzyme.configure({adapter: new Adapter()});

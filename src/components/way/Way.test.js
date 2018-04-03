@@ -1,7 +1,7 @@
 import React from 'react';
 import Renderer from 'react-test-renderer';
 import Enzyme, {mount} from 'enzyme'
-import Adapter from "enzyme-adapter-react-16";
+import Adapter from 'enzyme-adapter-react-16';
 import configureStore from 'redux-mock-store';
 import Way from './Way';
 
