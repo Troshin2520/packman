@@ -14,7 +14,6 @@ class Pacman extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log(this.props.move, nextProps.move);
     if(this.props.x === nextProps.x &&
        this.props.y === nextProps.y &&
        this.props.move === nextProps.move) {
