@@ -12,10 +12,10 @@ describe('Spider tests', () => {
 
   const initialState = {
     spiders: {
-      red: {x: 6, y: 6, move: directions.up},
-      green: {x: 6, y: 6, move: directions.up},
-      blue: {x: 6, y: 6, move: directions.up},
-      orange: {x: 6, y: 6, move: directions.up}
+      red: {x: 6, y: 6},
+      green: {x: 6, y: 6},
+      blue: {x: 6, y: 6},
+      orange: {x: 6, y: 6, drugged: 10}
     }
   };
 

@@ -65,7 +65,7 @@ export const getAvailableDirections = (pt, arr) => {
 
 export const wrapArrayByZerros = function (arr) {
   if (typeof arr !== 'object' || arr.length === 0) {
-    return [[0, 0][0, 0]];
+    return [[0,0][0,0]];
   }
   let newField = arr.slice(0);
   const len = newField[0].length;

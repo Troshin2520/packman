@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import './Spider.less';
-import {ACTION_MOVE_SPIDER, BLOCK_SIZE, directions} from '../../constants';
+import {ACTION_MOVE_SPIDER, BLOCK_SIZE, directions, colors} from '../../constants';
 
 class Spider extends Component {
 
@@ -28,7 +28,7 @@ class Spider extends Component {
 
 
   render() {
-    return (<div className={`spider ${this.props.color} move-${this.props.move} turn-${this.props.move}`}
+    return (<div className={`spider ${this.props.drugged ? 'drugged' : ''} ${this.props.color} move-${this.props.move} turn-${this.props.move}`}
                  style={{top: `${this.props.y * BLOCK_SIZE}rem`, left: `${this.props.x * BLOCK_SIZE}rem`}}
                  onAnimationEnd={this.onAnimationEnd}>
       <div className="body">
@@ -52,10 +52,16 @@ class Spider extends Component {
 }
 
 Spider.propTypes = {
-  color: PropTypes.oneOf(['red', 'green', 'blue', 'orange']).isRequired,
-  move: PropTypes.oneOf(Object.values(directions)).isRequired,
+  color: PropTypes.oneOf(colors).isRequired,
+  move: PropTypes.oneOf(Object.values(directions)),
+  drugged: PropTypes.number,
   x: PropTypes.number.isRequired,
   y: PropTypes.number.isRequired
+};
+
+Spider.defaultProps = {
+  drugged: 0,
+  move: directions.up
 };
 
 

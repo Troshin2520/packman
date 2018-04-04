@@ -24,6 +24,9 @@ export const game = store => next => (action) => {
           action.payload.y = pt.y;
 
         }
+        if(action.payload.drugged > 0) {
+          action.payload.drugged--;
+        }
       }
       break;
 

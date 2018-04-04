@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {ACTION_FEED_ATE} from '../../constants';
+import {ACTION_FEED_ATE, ACTION_PILL_ATE} from '../../constants';
 import feed from "../../resources/sounds/feed.mp3";
 import eat from "../../resources/sounds/eat.mp3";
 import './Way.less';
@@ -24,10 +24,11 @@ class Way extends Component {
 
   componentWillUpdate() {
     if (this.props.has === 2 || this.props.has === 1) {
-      this.props.onChangeState(ACTION_FEED_ATE, {type: this.props.has});
+      this.props.onChangeState(ACTION_FEED_ATE, this.props.has);
       if(this.props.has === 1) {
         this.feedSound.play();
       } else {
+        this.props.onChangeState(ACTION_PILL_ATE, {});
         this.eatSound.play();
       }
     }
