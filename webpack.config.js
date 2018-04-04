@@ -25,7 +25,14 @@ module.exports = function (config) {
         options: {
           strictMath: true
         }
-      }
+      },
     ]
+  },
+    {
+    test: /\.wav$/,
+    loader: require.resolve('file-loader'),
+    query: {
+      name: 'static/media/[name].[hash:8].[ext]'
+    }
   });
 }
