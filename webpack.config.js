@@ -29,7 +29,7 @@ module.exports = function (config) {
     ]
   },
     {
-    test: /\.wav$/,
+    test: /\.(wav|mp3)$/,
     loader: require.resolve('file-loader'),
     query: {
       name: 'static/media/[name].[hash:8].[ext]'
