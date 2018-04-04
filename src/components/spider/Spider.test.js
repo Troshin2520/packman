@@ -4,7 +4,6 @@ import configureStore from 'redux-mock-store';
 import Enzyme, {mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import Spider from './Spider';
-import {directions} from '../../constants';
 
 Enzyme.configure({adapter: new Adapter()});
 
