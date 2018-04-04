@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import './Pacman.less';
-import {ACTION_MOVE_PACMAN, ACTION_PACMAN_EAT, BLOCK_SIZE} from '../../constants';
+import {ACTION_MOVE_PACMAN, ACTION_PACMAN_EAT, BLOCK_SIZE, directions} from '../../constants';
 import ReactDOM from "react-dom";
 
 class Pacman extends Component {
@@ -58,8 +58,8 @@ class Pacman extends Component {
 }
 
 Pacman.propTypes = {
-  next: PropTypes.oneOf(['up', 'down', 'left', 'right', 'no']).isRequired,
-  move: PropTypes.oneOf(['up', 'down', 'left', 'right', 'no']).isRequired,
+  next: PropTypes.oneOf(Object.values(directions)).isRequired,
+  move: PropTypes.oneOf(Object.values(directions)).isRequired,
   x: PropTypes.number.isRequired,
   y: PropTypes.number.isRequired
 };

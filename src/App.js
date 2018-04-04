@@ -39,7 +39,7 @@ class App extends Component {
 
   componentDidMount() {
     document.addEventListener('keydown', function (e) {
-      if (['ArrowRight', 'ArrowLeft', 'ArrowDown', 'ArrowUp'].includes(e.code))
+     // if (['ArrowRight', 'ArrowLeft', 'ArrowDown', 'ArrowUp'].includes(e.code))
         store.dispatch({type: ACTION_CHANGE_PACMAN_DIRECTION, payload: e.code});
     });
   }

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import './Spider.less';
-import {ACTION_MOVE_SPIDER, BLOCK_SIZE} from '../../constants';
+import {ACTION_MOVE_SPIDER, BLOCK_SIZE, directions} from '../../constants';
 
 class Spider extends Component {
 
@@ -53,7 +53,7 @@ class Spider extends Component {
 
 Spider.propTypes = {
   color: PropTypes.oneOf(['red', 'green', 'blue', 'orange', 'drugged']).isRequired,
-  move: PropTypes.oneOf(['up', 'down', 'left', 'right']).isRequired,
+  move: PropTypes.oneOf(Object.values(directions)).isRequired,
   x: PropTypes.number.isRequired,
   y: PropTypes.number.isRequired
 };

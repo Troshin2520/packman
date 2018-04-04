@@ -1,19 +1,21 @@
+import {directions} from '../constants';
+
 export const getDirectionFromCode = function (code) {
   return code && /^Arrow[A-Z]+[a-z]+$/.test(code) ? code.toLowerCase().replace('arrow', '') : 'no';
 }
 
 export const increasePoint = (point, direction) => {
   switch (direction) {
-    case 'up':
+    case directions.up:
       point.y--;
       break;
-    case 'left':
+    case directions.left:
       point.x--;
       break;
-    case 'down':
+    case directions.down:
       point.y++;
       break;
-    case 'right':
+    case directions.right:
       point.x++;
       break;
     default:
@@ -27,16 +29,16 @@ export const fixOverstepping = function (point, direction, field) {
   field[0] = field[0] || [];
   direction = direction || '';
   let rowLength = field[0].length;
-  if (newPoint.y < 0 && direction === 'up') {
+  if (newPoint.y < 0 && direction === directions.up) {
     newPoint.y = field.length;
   }
-  if (newPoint.y >= field.length && direction === 'down') {
+  if (newPoint.y >= field.length && direction === directions.down) {
     newPoint.y = -1;
   }
-  if (newPoint.x < 0 && direction === 'left') {
+  if (newPoint.x < 0 && direction === directions.left) {
     newPoint.x = rowLength;
   }
-  if (newPoint.x >= rowLength && direction === 'right') {
+  if (newPoint.x >= rowLength && direction === directions.right) {
     newPoint.x = -1;
   }
   return newPoint;
@@ -54,7 +56,7 @@ export const getAvailableDirections = (pt, arr) => {
     let {x, y} = points[key];
     if (typeof wrapped[y + 1] !== 'undefined') {
       let point = wrapped[y + 1][x + 1];
-      return [0, 1, 2].includes(point) || (point === 8 && key === 'up');
+      return [0, 1, 2].includes(point) || (point === 8 && key === directions.up);
     }
     return false;
   });

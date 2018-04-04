@@ -3,6 +3,7 @@ import {mount} from 'enzyme';
 import configureStore from 'redux-mock-store';
 import Renderer from 'react-test-renderer';
 import App from './App';
+import {directions} from "./constants";
 
 
 it('App renders without crashing', () => {
@@ -13,9 +14,9 @@ it('App renders without crashing', () => {
       [4, 1, 4, 0, 4, 8, 8, 8, 4, 0, 4, 1, 4]
     ],
     speed: 0.6,
-    pacman: {x: 6, y: 8, dir: 'left'},
+    pacman: {x: 6, y: 8, dir: directions.left},
     spiders: {
-      red: {x: 6, y: 6, move: 'up'}
+      red: {x: 6, y: 6, move: directions.up}
     },
   };
 

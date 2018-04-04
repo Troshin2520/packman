@@ -4,6 +4,7 @@ import configureStore from 'redux-mock-store';
 import Enzyme, {mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import Spider from './Spider';
+import {directions} from '../../constants';
 
 Enzyme.configure({adapter: new Adapter()});
 
@@ -11,10 +12,10 @@ describe('Spider tests', () => {
 
   const initialState = {
     spiders: {
-      red: {x: 6, y: 6, move: 'up'},
-      green: {x: 6, y: 6, move: 'up'},
-      blue: {x: 6, y: 6, move: 'up'},
-      orange: {x: 6, y: 6, move: 'up'}
+      red: {x: 6, y: 6, move: directions.up},
+      green: {x: 6, y: 6, move: directions.up},
+      blue: {x: 6, y: 6, move: directions.up},
+      orange: {x: 6, y: 6, move: directions.up}
     }
   };
 
