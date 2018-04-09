@@ -16,7 +16,7 @@ const spidersReducer = (state = initialState, action) => {
       return update(state, {[action.payload.color]: {$set: action.payload}});
       break;
     case ACTION_PILL_ATE:
-      const obj = colors.reduce((o, key) => ({ ...o, [key]: {...state[key], drugged: 10}}), {})
+      const obj = colors.reduce((o, key) => ({ ...o, [key]: {...state[key], drugged: 10, pursues: false}}), {});
       return update(state, {$merge: obj});
       break;
     default:

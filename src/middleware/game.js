@@ -1,4 +1,4 @@
-import * as api from '../api/field';
+import * as api from '../api/game';
 import {
   ACTION_MOVE_SPIDER,
   ACTION_MOVE_PACMAN,
@@ -15,17 +15,15 @@ export const game = store => next => (action) => {
     case ACTION_MOVE_SPIDER: {
         const pt = api.increasePoint({x: action.payload.x, y: action.payload.y}, action.payload.move);
         const dirs = api.getAvailableDirections(pt, field);
-        const p = Math.round((Math.random() * 10) % (dirs.length - 1));
-        if (dirs.length > 0) {
-          if (!dirs.includes(action.payload.move)) {
-            action.payload.move = dirs[p];
-          }
-          action.payload.x = pt.x;
-          action.payload.y = pt.y;
-
-        }
+        action.payload.move = api.getRandomDirection(dirs, action.payload.move);
+        action.payload.x = pt.x;
+        action.payload.y = pt.y;
         if(action.payload.drugged > 0) {
           action.payload.drugged--;
+        }
+        action.pursues = api.pointsInLine(action.payload, state.pacman, state.field);
+        if(action.pursues) {
+          //console.log(action.payload);
         }
       }
       break;

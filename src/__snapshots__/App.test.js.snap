@@ -31,7 +31,9 @@ exports[`App renders without crashing 1`] = `
       </div>
     </div>
     <div
-      className="spider  red move-up turn-up"
+      className="spider  red
+                                 move-up
+                                 turn-up"
       onAnimationEnd={[Function]}
       style={
         Object {
@@ -80,7 +82,9 @@ exports[`App renders without crashing 1`] = `
       </div>
     </div>
     <div
-      className="spider  green move-up turn-up"
+      className="spider  green
+                                 move-up
+                                 turn-up"
       onAnimationEnd={[Function]}
       style={
         Object {
@@ -129,7 +133,9 @@ exports[`App renders without crashing 1`] = `
       </div>
     </div>
     <div
-      className="spider  orange move-up turn-up"
+      className="spider  orange
+                                 move-up
+                                 turn-up"
       onAnimationEnd={[Function]}
       style={
         Object {
@@ -178,7 +184,9 @@ exports[`App renders without crashing 1`] = `
       </div>
     </div>
     <div
-      className="spider  blue move-up turn-up"
+      className="spider  blue
+                                 move-up
+                                 turn-up"
       onAnimationEnd={[Function]}
       style={
         Object {

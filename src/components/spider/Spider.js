@@ -28,7 +28,9 @@ class Spider extends Component {
 
 
   render() {
-    return (<div className={`spider ${this.props.drugged ? 'drugged' : ''} ${this.props.color} move-${this.props.move} turn-${this.props.move}`}
+    return (<div className={`spider ${this.props.drugged ? 'drugged' : ''} ${this.props.color}
+                             move-${this.props.move}
+                             turn-${this.props.move}`}
                  style={{top: `${this.props.y * BLOCK_SIZE}rem`, left: `${this.props.x * BLOCK_SIZE}rem`}}
                  onAnimationEnd={this.onAnimationEnd}>
       <div className="body">
@@ -60,6 +62,7 @@ Spider.propTypes = {
 };
 
 Spider.defaultProps = {
+  pursues: false,
   drugged: 0,
   move: directions.up
 };
