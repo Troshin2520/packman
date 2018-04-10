@@ -113,5 +113,10 @@ describe('field functions tests', () => {
     expect([directions.up, directions.right].includes(result)).toBeFalsy();
   });
 
+  it('getFeedsCount function tested', () => {
+    expect(api.getFeedsCount(field)).toEqual(4);
+    expect(api.getFeedsCount()).toEqual(0);
+  });
+
 
 });

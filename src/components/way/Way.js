@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import feed from "../../resources/sounds/feed.mp3";
 import eat from "../../resources/sounds/eat.mp3";

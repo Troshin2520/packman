@@ -61,7 +61,7 @@ class Spider extends Component {
 Spider.propTypes = {
   color: PropTypes.oneOf(colors).isRequired,
   move: PropTypes.oneOf(Object.values(directions)),
-  drugged: PropTypes.number,
+  drugged: PropTypes.number.isRequired,
   x: PropTypes.number.isRequired,
   y: PropTypes.number.isRequired
 };

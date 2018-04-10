@@ -14,13 +14,6 @@ class Field extends Component {
     this.updateWayState = this.updateWayState.bind(this);
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-      return true;
-  }
-
-  componentWillUpdate() {
-  }
-
   updateWayState(action) {
     this.props.onChangeState(action === 1 ? ACTION_FEED_ATE : ACTION_PILL_ATE, {});
   }
@@ -52,8 +45,6 @@ class Field extends Component {
 Field.propTypes = {
 };
 
-Field.defaultProps = {
-};
 
 export default connect(
   (state, props) => {

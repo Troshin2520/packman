@@ -5,7 +5,8 @@ import {
   ACTION_CHANGE_PACMAN_DIRECTION, ACTION_CHANGE_ZONE,
   ACTION_PACMAN_EAT,
   ACTION_CHECK_POSITION,
-  directions,
+  ACTION_ZONE_CHANGED,
+  directions, zones
 } from '../constants';
 
 
@@ -16,18 +17,18 @@ export const game = store => next => (action) => {
 
   switch (action.type) {
     case ACTION_MOVE_SPIDER: {
-        const pt = api.increasePoint(action.payload, action.payload.move);
-        const dirs = api.getAvailableDirections(pt, field);
-        if(!action.payload.drugged) {
-          action.payload.move = api.getPreferredDirection(action.payload, state.pacman, dirs, action.payload.move);
-        } else {
-          action.payload.move = api.getRandomDirection(dirs, action.payload.move);
-        }
-        action.payload = {...action.payload, ...pt};
-        if(action.payload.drugged > 0) {
-          action.payload.drugged--;
-        }
+      const pt = api.increasePoint(action.payload, action.payload.move);
+      const dirs = api.getAvailableDirections(pt, field);
+      if (!action.payload.drugged) {
+        action.payload.move = api.getPreferredDirection(action.payload, state.pacman, dirs, action.payload.move);
+      } else {
+        action.payload.move = api.getRandomDirection(dirs, action.payload.move);
       }
+      action.payload = {...action.payload, ...pt};
+      if (action.payload.drugged > 0) {
+        action.payload.drugged--;
+      }
+    }
       break;
 
     case ACTION_MOVE_PACMAN:
@@ -57,19 +58,22 @@ export const game = store => next => (action) => {
 
     case ACTION_PACMAN_EAT:
       let nextPt = api.increasePoint({x: state.pacman.x, y: state.pacman.y}, state.pacman.move);
-      if(api.pointInArray(nextPt, state.field)) {
+      if (api.pointInArray(nextPt, state.field)) {
         action.payload = nextPt;
       }
       break;
 
     case ACTION_CHECK_POSITION:
-      Object.keys(state.spiders).forEach(function(key) {
-        if(api.pointsEqual(state.spiders[key], state.pacman)) {
+      Object.keys(state.spiders).forEach(function (key) {
+        if (api.pointsEqual(state.spiders[key], state.pacman)) {
           //console.log(key, 'DDDDEEEEEAAAADDDD');
         }
       });
       break;
 
+    case ACTION_ZONE_CHANGED:
+      action.payload.feeds = api.getFeedsCount(zones[action.payload.zone].field);
+      break;
     default:
   }
   return next(action);

@@ -140,6 +140,7 @@ export const getOppositeDirection = function(dir) {
       return directions.left;
     case directions.left:
       return directions.right;
+    default:
   }
 }
 
@@ -173,6 +174,7 @@ export const getFeedsCount = function(arr) {
     if(typeof arr[i] !== 'object' || arr[i].length === 0) {
       return 0;
     }
+
     for(let j in arr[i]) {
       if(arr[i][j] > 0 && arr[i][j] < 4) {
         cnt++;
