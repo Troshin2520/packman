@@ -130,7 +130,54 @@ export const getRandomDirection = function (dirs, curDir) {
 
 }
 
+export const getOppositeDirection = function(dir) {
+  switch (dir) {
+    case directions.up:
+      return directions.bottom;
+    case directions.bottom:
+      return directions.up;
+    case directions.right:
+      return directions.left;
+    case directions.left:
+      return directions.right;
+  }
+}
 
-export const getPreferredDirection  = function (current, goal, dirs) {
+export const getPreferredDirection = function (currentPt, goalPt, dirs, curDir) {
+  if(dirs.includes(curDir)) {
+    return curDir;
+  }
+  const xDiff = goalPt.x - currentPt.x;
+  const yDiff = goalPt.y - currentPt.y;
+  const xDir = xDiff > 0 ? directions.right : directions.left;
+  const yDir = yDiff > 0 ? directions.down : directions.up;
+  if(dirs.includes(xDir) && dirs.includes(yDir)) {
+    //return Math.abs(xDiff) < Math.abs(yDiff) ? yDir : xDir;
+    return getOppositeDirection(curDir) === xDir ? yDir : xDir;
+  }
+  if(dirs.includes(xDir)) {
+    return xDir;
+  }
+  if(dirs.includes(yDir)) {
+    return yDir;
+  }
+  return getRandomDirection(dirs, curDir);
+}
 
+export const getFeedsCount = function(arr) {
+  if(typeof arr !== 'object' || arr.length === 0) {
+    return 0;
+  }
+  let cnt = 0;
+  for(let i in arr) {
+    if(typeof arr[i] !== 'object' || arr[i].length === 0) {
+      return 0;
+    }
+    for(let j in arr[i]) {
+      if(arr[i][j] > 0 && arr[i][j] < 4) {
+        cnt++;
+      }
+    }
+  }
+  return cnt;
 }

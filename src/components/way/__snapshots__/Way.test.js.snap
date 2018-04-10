@@ -2,7 +2,7 @@
 
 exports[`Way testing Way rendered without crushing 1`] = `
 <div
-  className="way empty"
+  className="way feed"
 >
   <div />
 </div>

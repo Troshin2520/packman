@@ -35,6 +35,11 @@
     background-color: lightblue;
   }
 
+
+  &.eaten .body, &.eaten .claw {
+    background-color: transparent;
+  }
+
   & .bottom {
     display: flex;
   }
@@ -119,17 +124,27 @@
 
   &.move {
     &-left, &-right, &-up, &-down {
-      animation-duration: 0.6s;
       animation-direction: normal;
       animation-iteration-count: 1;
       animation-fill-mode: backwards;
       animation-timing-function: linear;
     }
 
-    &-left.drugged,
-    &-right.drugged,
-    &-up.drugged,
-    &-down.drugged {
+    &-speed-3 {
+      animation-duration: 0.6s;
+    }
+
+    &-speed-2 {
+      animation-duration: 0.5s;
+    }
+
+    &-speed-1 {
+      animation-duration: 0.4s;
+    }
+
+    &-speed-3.drugged,
+    &-speed-2.drugged,
+    &-speed-1.drugged {
       animation-duration: 1s;
     }
 

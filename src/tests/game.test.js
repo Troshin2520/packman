@@ -114,6 +114,4 @@ describe('field functions tests', () => {
   });
 
 
-
-
 });

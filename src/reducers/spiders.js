@@ -11,14 +11,11 @@ const spidersReducer = (state = initialState, action) => {
   switch (action.type) {
     case ACTION_CHANGE_ZONE:
       return zones[action.payload].spiders;
-      break;
     case ACTION_MOVE_SPIDER:
       return update(state, {[action.payload.color]: {$set: action.payload}});
-      break;
     case ACTION_PILL_ATE:
-      const obj = colors.reduce((o, key) => ({ ...o, [key]: {...state[key], drugged: 10, pursues: false}}), {});
+      const obj = colors.reduce((o, key) => ({ ...o, [key]: {...state[key], drugged: DRUG_DURATION, pursues: false}}), {});
       return update(state, {$merge: obj});
-      break;
     default:
   }
   return state;

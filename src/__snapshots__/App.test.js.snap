@@ -5,236 +5,248 @@ exports[`App renders without crashing 1`] = `
   className="App"
 >
   <div
+    className="pacman  move-no"
+    onAnimationEnd={[Function]}
+    style={
+      Object {
+        "left": "24rem",
+        "top": "28rem",
+      }
+    }
+  >
+    <div
+      className="turn-no"
+    >
+      <div
+        className="top"
+      >
+        •
+      </div>
+      <div
+        className="bottom"
+      />
+    </div>
+  </div>
+  <div
+    className="spider red
+                               
+                               
+                               move-up
+                               move-speed-3
+                               turn-up"
+    onAnimationEnd={[Function]}
+    style={
+      Object {
+        "left": "24rem",
+        "top": "16rem",
+      }
+    }
+  >
+    <div
+      className="body"
+    >
+      <div
+        className="eyes"
+      >
+        <div
+          className="pupils"
+        />
+      </div>
+      <div
+        className="eyes"
+      >
+        <div
+          className="pupils"
+        />
+      </div>
+    </div>
+    <div
+      className="bottom"
+    >
+      <div
+        className="claws"
+      >
+        <div
+          className="claw"
+        />
+        <div
+          className="claw"
+        />
+        <div
+          className="claw"
+        />
+        <div
+          className="claw"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="spider green
+                               
+                               
+                               move-up
+                               move-speed-3
+                               turn-up"
+    onAnimationEnd={[Function]}
+    style={
+      Object {
+        "left": "24rem",
+        "top": "20rem",
+      }
+    }
+  >
+    <div
+      className="body"
+    >
+      <div
+        className="eyes"
+      >
+        <div
+          className="pupils"
+        />
+      </div>
+      <div
+        className="eyes"
+      >
+        <div
+          className="pupils"
+        />
+      </div>
+    </div>
+    <div
+      className="bottom"
+    >
+      <div
+        className="claws"
+      >
+        <div
+          className="claw"
+        />
+        <div
+          className="claw"
+        />
+        <div
+          className="claw"
+        />
+        <div
+          className="claw"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="spider orange
+                               
+                               
+                               move-up
+                               move-speed-3
+                               turn-up"
+    onAnimationEnd={[Function]}
+    style={
+      Object {
+        "left": "20rem",
+        "top": "20rem",
+      }
+    }
+  >
+    <div
+      className="body"
+    >
+      <div
+        className="eyes"
+      >
+        <div
+          className="pupils"
+        />
+      </div>
+      <div
+        className="eyes"
+      >
+        <div
+          className="pupils"
+        />
+      </div>
+    </div>
+    <div
+      className="bottom"
+    >
+      <div
+        className="claws"
+      >
+        <div
+          className="claw"
+        />
+        <div
+          className="claw"
+        />
+        <div
+          className="claw"
+        />
+        <div
+          className="claw"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="spider blue
+                               
+                               
+                               move-up
+                               move-speed-3
+                               turn-up"
+    onAnimationEnd={[Function]}
+    style={
+      Object {
+        "left": "28rem",
+        "top": "20rem",
+      }
+    }
+  >
+    <div
+      className="body"
+    >
+      <div
+        className="eyes"
+      >
+        <div
+          className="pupils"
+        />
+      </div>
+      <div
+        className="eyes"
+      >
+        <div
+          className="pupils"
+        />
+      </div>
+    </div>
+    <div
+      className="bottom"
+    >
+      <div
+        className="claws"
+      >
+        <div
+          className="claw"
+        />
+        <div
+          className="claw"
+        />
+        <div
+          className="claw"
+        />
+        <div
+          className="claw"
+        />
+      </div>
+    </div>
+  </div>
+  <div
     className="field"
   >
     <div
-      className="pacman  move-no"
-      onAnimationEnd={[Function]}
-      style={
-        Object {
-          "left": "24rem",
-          "top": "32rem",
-        }
-      }
-    >
-      <div
-        className="turn-no"
-      >
-        <div
-          className="top"
-        >
-          •
-        </div>
-        <div
-          className="bottom"
-        />
-      </div>
-    </div>
-    <div
-      className="spider  red
-                                 move-up
-                                 turn-up"
-      onAnimationEnd={[Function]}
-      style={
-        Object {
-          "left": "24rem",
-          "top": "24rem",
-        }
-      }
-    >
-      <div
-        className="body"
-      >
-        <div
-          className="eyes"
-        >
-          <div
-            className="pupils"
-          />
-        </div>
-        <div
-          className="eyes"
-        >
-          <div
-            className="pupils"
-          />
-        </div>
-      </div>
-      <div
-        className="bottom"
-      >
-        <div
-          className="claws"
-        >
-          <div
-            className="claw"
-          />
-          <div
-            className="claw"
-          />
-          <div
-            className="claw"
-          />
-          <div
-            className="claw"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      className="spider  green
-                                 move-up
-                                 turn-up"
-      onAnimationEnd={[Function]}
-      style={
-        Object {
-          "left": "24rem",
-          "top": "24rem",
-        }
-      }
-    >
-      <div
-        className="body"
-      >
-        <div
-          className="eyes"
-        >
-          <div
-            className="pupils"
-          />
-        </div>
-        <div
-          className="eyes"
-        >
-          <div
-            className="pupils"
-          />
-        </div>
-      </div>
-      <div
-        className="bottom"
-      >
-        <div
-          className="claws"
-        >
-          <div
-            className="claw"
-          />
-          <div
-            className="claw"
-          />
-          <div
-            className="claw"
-          />
-          <div
-            className="claw"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      className="spider  orange
-                                 move-up
-                                 turn-up"
-      onAnimationEnd={[Function]}
-      style={
-        Object {
-          "left": "20rem",
-          "top": "24rem",
-        }
-      }
-    >
-      <div
-        className="body"
-      >
-        <div
-          className="eyes"
-        >
-          <div
-            className="pupils"
-          />
-        </div>
-        <div
-          className="eyes"
-        >
-          <div
-            className="pupils"
-          />
-        </div>
-      </div>
-      <div
-        className="bottom"
-      >
-        <div
-          className="claws"
-        >
-          <div
-            className="claw"
-          />
-          <div
-            className="claw"
-          />
-          <div
-            className="claw"
-          />
-          <div
-            className="claw"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      className="spider  blue
-                                 move-up
-                                 turn-up"
-      onAnimationEnd={[Function]}
-      style={
-        Object {
-          "left": "28rem",
-          "top": "24rem",
-        }
-      }
-    >
-      <div
-        className="body"
-      >
-        <div
-          className="eyes"
-        >
-          <div
-            className="pupils"
-          />
-        </div>
-        <div
-          className="eyes"
-        >
-          <div
-            className="pupils"
-          />
-        </div>
-      </div>
-      <div
-        className="bottom"
-      >
-        <div
-          className="claws"
-        >
-          <div
-            className="claw"
-          />
-          <div
-            className="claw"
-          />
-          <div
-            className="claw"
-          />
-          <div
-            className="claw"
-          />
-        </div>
-      </div>
-    </div>
-    <div
       className="row"
       tabIndex="1"
     >
@@ -1233,40 +1245,6 @@ exports[`App renders without crashing 1`] = `
         <div />
       </div>
       <div
-        className="wall"
-      >
-        <div
-          className="stone"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-      </div>
-      <div
         className="way feed"
       >
         <div />
@@ -1290,187 +1268,6 @@ exports[`App renders without crashing 1`] = `
         className="way feed"
       >
         <div />
-      </div>
-      <div
-        className="wall"
-      >
-        <div
-          className="stone"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-      </div>
-    </div>
-    <div
-      className="row"
-      tabIndex="1"
-    >
-      <div
-        className="wall"
-      >
-        <div
-          className="stone"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-      </div>
-      <div
-        className="way feed"
-      >
-        <div />
-      </div>
-      <div
-        className="wall"
-      >
-        <div
-          className="stone"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-      </div>
-      <div
-        className="way empty"
-      >
-        <div />
-      </div>
-      <div
-        className="way empty"
-      >
-        <div />
-      </div>
-      <div
-        className="way empty"
-      >
-        <div />
-      </div>
-      <div
-        className="way empty"
-      >
-        <div />
-      </div>
-      <div
-        className="way empty"
-      >
-        <div />
-      </div>
-      <div
-        className="way empty"
-      >
-        <div />
-      </div>
-      <div
-        className="way empty"
-      >
-        <div />
-      </div>
-      <div
-        className="wall"
-      >
-        <div
-          className="stone"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
       </div>
       <div
         className="way feed"
@@ -2317,38 +2114,9 @@ exports[`App renders without crashing 1`] = `
         <div />
       </div>
       <div
-        className="wall"
+        className="way feed"
       >
-        <div
-          className="stone"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
+        <div />
       </div>
       <div
         className="way feed"
@@ -2386,192 +2154,6 @@ exports[`App renders without crashing 1`] = `
         <div />
       </div>
       <div
-        className="wall"
-      >
-        <div
-          className="stone"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-      </div>
-      <div
-        className="way feed"
-      >
-        <div />
-      </div>
-      <div
-        className="wall"
-      >
-        <div
-          className="stone"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-      </div>
-    </div>
-    <div
-      className="row"
-      tabIndex="1"
-    >
-      <div
-        className="wall"
-      >
-        <div
-          className="stone"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-      </div>
-      <div
-        className="way feed"
-      >
-        <div />
-      </div>
-      <div
-        className="way feed"
-      >
-        <div />
-      </div>
-      <div
-        className="way feed"
-      >
-        <div />
-      </div>
-      <div
-        className="way feed"
-      >
-        <div />
-      </div>
-      <div
-        className="way feed"
-      >
-        <div />
-      </div>
-      <div
-        className="wall"
-      >
-        <div
-          className="stone"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-        <div
-          className="stone"
-        />
-        <div
-          className="stone-half"
-        />
-      </div>
-      <div
-        className="way feed"
-      >
-        <div />
-      </div>
-      <div
-        className="way feed"
-      >
-        <div />
-      </div>
-      <div
-        className="way feed"
-      >
-        <div />
-      </div>
-      <div
         className="way feed"
       >
         <div />
@@ -3550,6 +3132,22 @@ exports[`App renders without crashing 1`] = `
           className="stone-half"
         />
       </div>
+    </div>
+  </div>
+  <div
+    className="results"
+  >
+    <div
+      className="zone"
+    >
+      ZONE: 
+      1
+    </div>
+    <div
+      className="score"
+    >
+      SCORE: 
+      1
     </div>
   </div>
 </div>

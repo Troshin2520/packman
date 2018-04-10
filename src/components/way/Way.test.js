@@ -19,25 +19,15 @@ describe('Way testing', () => {
 
   it('Way rendered without crushing', () => {
     const component = Renderer.create(
-      <Way store={store} x={0} y={1}/>
+      <Way has={1} x={0} y={1}/>
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('Checked default type', () => {
-    const wrapper = mount(<Way store={store} x={1} y={0}/>);
+    const wrapper = mount(<Way x={1} y={0}/>);
     expect(wrapper.find('.way').hasClass('empty')).toBeTruthy();
-  });
-
-  it('`pill` attribute added successfully', () => {
-    const wrapper = mount(<Way store={store} x={1} y={1}/>);
-    expect(wrapper.find('.way').hasClass('feed')).toBeTruthy();
-  });
-
-  it('`pill` attribute added successfully', () => {
-    const wrapper = mount(<Way store={store} x={2} y={1}/>);
-    expect(wrapper.find('.way').hasClass('pill')).toBeTruthy();
   });
 
 });

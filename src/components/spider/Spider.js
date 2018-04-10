@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import './Spider.less';
-import {ACTION_MOVE_SPIDER, BLOCK_SIZE, directions, colors} from '../../constants';
+import {ACTION_MOVE_SPIDER, ACTION_CHECK_POSITION, BLOCK_SIZE, directions, colors} from '../../constants';
 
 class Spider extends Component {
 
@@ -24,14 +24,19 @@ class Spider extends Component {
   onAnimationEnd() {
     const {onChangeState, ...params} = this.props;
     this.props.onChangeState(ACTION_MOVE_SPIDER, params);
+    this.props.onChangeState(ACTION_CHECK_POSITION, {});
   }
 
 
   render() {
-    return (<div className={`spider ${this.props.drugged ? 'drugged' : ''} ${this.props.color}
+    return (<div className={`spider ${this.props.color}
+                             ${this.props.drugged > 0 ? 'drugged' : ''}
+                             ${this.props.drugged < 0 ? 'eaten' : ''}
                              move-${this.props.move}
+                             move-speed-${this.props.speed}
                              turn-${this.props.move}`}
-                 style={{top: `${this.props.y * BLOCK_SIZE}rem`, left: `${this.props.x * BLOCK_SIZE}rem`}}
+                 style={{top: `${this.props.y * BLOCK_SIZE}rem`,
+                         left: `${this.props.x * BLOCK_SIZE}rem`}}
                  onAnimationEnd={this.onAnimationEnd}>
       <div className="body">
         <div className="eyes">

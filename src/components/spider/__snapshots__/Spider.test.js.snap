@@ -2,8 +2,11 @@
 
 exports[`Spider tests Spider rendered without crushing 1`] = `
 <div
-  className="spider  red
+  className="spider red
+                             
+                             
                              move-up
+                             move-speed-undefined
                              turn-up"
   onAnimationEnd={[Function]}
   style={
@@ -56,8 +59,11 @@ exports[`Spider tests Spider rendered without crushing 1`] = `
 
 exports[`Spider tests Spider rendered without crushing 2`] = `
 <div
-  className="spider  green
+  className="spider green
+                             
+                             
                              move-up
+                             move-speed-undefined
                              turn-up"
   onAnimationEnd={[Function]}
   style={
@@ -110,8 +116,11 @@ exports[`Spider tests Spider rendered without crushing 2`] = `
 
 exports[`Spider tests Spider rendered without crushing 3`] = `
 <div
-  className="spider  blue
+  className="spider blue
+                             
+                             
                              move-up
+                             move-speed-undefined
                              turn-up"
   onAnimationEnd={[Function]}
   style={
@@ -164,8 +173,11 @@ exports[`Spider tests Spider rendered without crushing 3`] = `
 
 exports[`Spider tests Spider rendered without crushing 4`] = `
 <div
-  className="spider drugged orange
+  className="spider orange
+                             drugged
+                             
                              move-up
+                             move-speed-undefined
                              turn-up"
   onAnimationEnd={[Function]}
   style={

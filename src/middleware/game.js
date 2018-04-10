@@ -4,26 +4,28 @@ import {
   ACTION_MOVE_PACMAN,
   ACTION_CHANGE_PACMAN_DIRECTION, ACTION_CHANGE_ZONE,
   ACTION_PACMAN_EAT,
-  directions
+  ACTION_CHECK_POSITION,
+  directions,
 } from '../constants';
 
 
 export const game = store => next => (action) => {
+
   const state = store.getState();
   const field = state.field || [];
+
   switch (action.type) {
     case ACTION_MOVE_SPIDER: {
-        const pt = api.increasePoint({x: action.payload.x, y: action.payload.y}, action.payload.move);
+        const pt = api.increasePoint(action.payload, action.payload.move);
         const dirs = api.getAvailableDirections(pt, field);
-        action.payload.move = api.getRandomDirection(dirs, action.payload.move);
-        action.payload.x = pt.x;
-        action.payload.y = pt.y;
+        if(!action.payload.drugged) {
+          action.payload.move = api.getPreferredDirection(action.payload, state.pacman, dirs, action.payload.move);
+        } else {
+          action.payload.move = api.getRandomDirection(dirs, action.payload.move);
+        }
+        action.payload = {...action.payload, ...pt};
         if(action.payload.drugged > 0) {
           action.payload.drugged--;
-        }
-        action.pursues = api.pointsInLine(action.payload, state.pacman, state.field);
-        if(action.pursues) {
-          //console.log(action.payload);
         }
       }
       break;
@@ -38,8 +40,7 @@ export const game = store => next => (action) => {
       if (!dirs.includes(action.payload.move)) {
         action.payload.move = directions.no;
       }
-      action.payload.x = pt.x;
-      action.payload.y = pt.y;
+      action.payload = {...action.payload, ...pt};
       break;
 
     case ACTION_CHANGE_PACMAN_DIRECTION:
@@ -55,12 +56,23 @@ export const game = store => next => (action) => {
       break;
 
     case ACTION_PACMAN_EAT:
-      action.payload = api.increasePoint({x: state.pacman.x, y: state.pacman.y}, state.pacman.move);
+      let nextPt = api.increasePoint({x: state.pacman.x, y: state.pacman.y}, state.pacman.move);
+      if(api.pointInArray(nextPt, state.field)) {
+        action.payload = nextPt;
+      }
+      break;
+
+    case ACTION_CHECK_POSITION:
+      Object.keys(state.spiders).forEach(function(key) {
+        if(api.pointsEqual(state.spiders[key], state.pacman)) {
+          //console.log(key, 'DDDDEEEEEAAAADDDD');
+        }
+      });
       break;
 
     default:
   }
-  return next(action)
+  return next(action);
 }
 
 
