@@ -9,13 +9,14 @@ import './Field.less';
 
 class Field extends Component {
 
-  constructor(props) {
-    super(props);
-    this.updateWayState = this.updateWayState.bind(this);
-  }
-
-  updateWayState(action) {
-    this.props.onChangeState(action === 1 ? ACTION_FEED_ATE : ACTION_PILL_ATE, {});
+  updateWayState = action => {
+    this.props.onChangeState(
+      action === 1
+        ?
+        ACTION_FEED_ATE
+        :
+        ACTION_PILL_ATE,
+      {});
   }
 
   render() {

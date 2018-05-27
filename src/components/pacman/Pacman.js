@@ -7,16 +7,12 @@ import ReactDOM from "react-dom";
 
 class Pacman extends Component {
 
-  constructor(props) {
-    super(props);
-    this.onAnimationEnd = this.onAnimationEnd.bind(this);
-    this.updatePosition = this.updatePosition.bind(this);
-  }
-
   shouldComponentUpdate(nextProps, nextState) {
-    return !(this.props.x === nextProps.x &&
+    return !(
+      this.props.x === nextProps.x &&
       this.props.y === nextProps.y &&
-      this.props.move === nextProps.move);
+      this.props.move === nextProps.move
+    );
   }
 
   componentWillUpdate() {
@@ -28,11 +24,11 @@ class Pacman extends Component {
     }
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     this.updatePosition();
   }
 
-  onAnimationEnd() {
+  onAnimationEnd = () => {
     this.updatePosition();
   }
 

@@ -14,12 +14,6 @@ import {
 
 class Spider extends Component {
 
-  constructor(props) {
-    super(props);
-    this.onAnimationEnd = this.onAnimationEnd.bind(this);
-    this.onAnimationStart = this.onAnimationStart.bind(this);
-  }
-
   componentWillUpdate() {
     const node = ReactDOM.findDOMNode(this);
     if (node) {
@@ -29,12 +23,13 @@ class Spider extends Component {
     }
   }
 
-  onAnimationEnd() {
+  onAnimationEnd = () => {
     const {onChangeState, ...params} = this.props;
     this.props.onChangeState(ACTION_MOVE_SPIDER, params);
+    this.props.onChangeState(ACTION_CHECK_POSITION, params);
   }
 
-  onAnimationStart() {
+  onAnimationStart = () => {
     const {onChangeState, ...params} = this.props;
     this.props.onChangeState(ACTION_CHECK_POSITION, params);
   }

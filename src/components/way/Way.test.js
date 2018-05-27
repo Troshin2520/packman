@@ -10,9 +10,11 @@ Enzyme.configure({adapter: new Adapter()});
 describe('Way testing', () => {
 
   const initialState = {
-    field: [[4, 0, 4],
+    field: [
+      [4, 0, 4],
       [0, 1, 2],
-      [4, 4, 4]]
+      [4, 4, 4]
+    ]
   };
   const mockStore = configureStore();
   const store = mockStore(initialState);
