@@ -3,12 +3,13 @@
 exports[`Spider tests Spider rendered without crushing 1`] = `
 <div
   className="spider red
-                             
-                             
+                             0
+                             false
                              move-up
                              move-speed-undefined
                              turn-up"
   onAnimationEnd={[Function]}
+  onAnimationStart={[Function]}
   style={
     Object {
       "left": "24rem",
@@ -60,12 +61,13 @@ exports[`Spider tests Spider rendered without crushing 1`] = `
 exports[`Spider tests Spider rendered without crushing 2`] = `
 <div
   className="spider green
-                             
-                             
+                             0
+                             false
                              move-up
                              move-speed-undefined
                              turn-up"
   onAnimationEnd={[Function]}
+  onAnimationStart={[Function]}
   style={
     Object {
       "left": "24rem",
@@ -117,12 +119,13 @@ exports[`Spider tests Spider rendered without crushing 2`] = `
 exports[`Spider tests Spider rendered without crushing 3`] = `
 <div
   className="spider blue
-                             
-                             
+                             0
+                             false
                              move-up
                              move-speed-undefined
                              turn-up"
   onAnimationEnd={[Function]}
+  onAnimationStart={[Function]}
   style={
     Object {
       "left": "24rem",
@@ -175,11 +178,12 @@ exports[`Spider tests Spider rendered without crushing 4`] = `
 <div
   className="spider orange
                              drugged
-                             
+                             false
                              move-up
                              move-speed-undefined
                              turn-up"
   onAnimationEnd={[Function]}
+  onAnimationStart={[Function]}
   style={
     Object {
       "left": "24rem",

@@ -20,14 +20,23 @@ class Field extends Component {
 
   render() {
     const field = this.props.field.map((line, i) => {
-      return (<div key={i} tabIndex="1" className="row">
+      return (<div
+        key={i}
+        tabIndex="1"
+        className="row">
         {line.map((cell, j) => {
           let key = `w${i}.${j}`;
           switch (cell) {
             case 0:
             case 1:
             case 2:
-              return <Way x={j} y={i} key={key} has={cell} onChangeState={this.updateWayState} />
+              return <Way
+                x={j}
+                y={i}
+                key={key}
+                has={cell}
+                onChangeState={this.updateWayState}
+              />
             case 4:
               return <Breaks key={key}/>
             case 8:
@@ -42,13 +51,12 @@ class Field extends Component {
   }
 }
 
-Field.propTypes = {
-};
+Field.propTypes = {};
 
 
 export default connect(
-  (state, props) => {
-    return {field: state.field};
+  ({field}) => {
+    return {field};
   },
   dispatch => ({
     onChangeState(type, item) {

@@ -6,12 +6,15 @@ const initialState = zones[0].pacman;
 const pacmanReducer = (state = initialState, action) => {
 
   switch (action.type) {
-    case ACTION_CHANGE_ZONE:
+    case ACTION_CHANGE_ZONE: {
       return zones[action.payload].pacman;
-    case ACTION_MOVE_PACMAN:
+    }
+    case ACTION_MOVE_PACMAN: {
       return update(state, {$merge: action.payload});
-    case ACTION_CHANGE_PACMAN_DIRECTION:
+    }
+    case ACTION_CHANGE_PACMAN_DIRECTION: {
       return update(state, {$merge: action.payload});
+    }
     default:
   }
 

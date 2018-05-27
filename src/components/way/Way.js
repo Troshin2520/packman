@@ -4,6 +4,10 @@ import feed from "../../resources/sounds/feed.mp3";
 import eat from "../../resources/sounds/eat.mp3";
 import './Way.less';
 
+const FIELD_TYPE_EMPTY = 0;
+const FIELD_TYPE_FEED = 1;
+const FIELD_TYPE_PILL = 2;
+
 class Way extends Component {
 
   constructor(props) {
@@ -13,40 +17,43 @@ class Way extends Component {
     this.eatSound = new Audio(eat);
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    if (this.props.has !== nextProps.has) {
-      return true;
-    }
-    return false;
+  shouldComponentUpdate({has: nextState}) {
+    const {has: currentState} = this.props;
+    return currentState !== nextState;
   }
 
   componentWillUpdate() {
-      this.props.onChangeState(this.props.has);
-      if(this.props.has === 1) {
-        this.feedSound.play();
-      } else if(this.props.has === 2){
-        this.eatSound.play();
-      }
+    const {has} = this.props;
+    this.props.onChangeState(has);
+    if (has === FIELD_TYPE_FEED) {
+      this.feedSound.play();
+    } else if (has === FIELD_TYPE_PILL) {
+      this.eatSound.play();
+    }
   }
 
   render() {
-    const index = this.props.has || 0;
-    return (<div className={`way ${this.types[index]}`} >
+    const {has} = this.props;
+    const index = has || FIELD_TYPE_EMPTY;
+    return (<div className={`way ${this.types[index]}`}>
       <div></div>
     </div>);
   }
 }
 
 Way.propTypes = {
-  onChangeState:PropTypes.func,
-  has: PropTypes.oneOf([0, 1, 2]),
+  onChangeState: PropTypes.func,
+  has: PropTypes.oneOf([
+    FIELD_TYPE_EMPTY,
+    FIELD_TYPE_FEED,
+    FIELD_TYPE_PILL
+  ]),
   x: PropTypes.number.isRequired,
   y: PropTypes.number.isRequired
 };
 
 Way.defaultProps = {
-  has: 0
+  has: FIELD_TYPE_EMPTY
 };
 
 export default Way;
-

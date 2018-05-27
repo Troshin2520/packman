@@ -24,7 +24,7 @@ class App extends Component {
 
   componentDidMount() {
     document.addEventListener('keydown', function (e) {
-        store.dispatch({type: ACTION_CHANGE_PACMAN_DIRECTION, payload: e.code});
+      store.dispatch({type: ACTION_CHANGE_PACMAN_DIRECTION, payload: e.code});
     });
   }
 
@@ -36,9 +36,9 @@ class App extends Component {
     });
     return (<Provider store={store}>
       <div className="App">
-          <Pacman/>
-          {spiders}
-          <Field/>
+        <Pacman/>
+        {spiders}
+        <Field/>
         <Results/>
       </div>
     </Provider>);

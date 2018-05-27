@@ -14,12 +14,9 @@ class Pacman extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    if (this.props.x === nextProps.x &&
+    return !(this.props.x === nextProps.x &&
       this.props.y === nextProps.y &&
-      this.props.move === nextProps.move) {
-      return false;
-    }
-    return true;
+      this.props.move === nextProps.move);
   }
 
   componentWillUpdate() {
@@ -43,18 +40,20 @@ class Pacman extends Component {
     const {onChangeState, ...params} = this.props;
     this.props.onChangeState(ACTION_PACMAN_EAT, params);
     this.props.onChangeState(ACTION_MOVE_PACMAN, params);
-    this.props.onChangeState(ACTION_CHECK_POSITION, {});
   }
 
   render() {
-    return (<div className={`pacman  move-${this.props.move}`}
-                 style={{top: `${this.props.y * BLOCK_SIZE}rem`, left: `${this.props.x * BLOCK_SIZE}rem`}}
-                 onAnimationEnd={this.onAnimationEnd}>
-      <div className={`turn-${this.props.move}`}>
-        <div className="top">&bull;</div>
-        <div className="bottom"></div>
+    const {move, x, y} = this.props;
+    return (
+      <div className={`pacman  move-${move}`}
+           style={{top: `${y * BLOCK_SIZE}rem`, left: `${x * BLOCK_SIZE}rem`}}
+           onAnimationEnd={this.onAnimationEnd}>
+        <div className={`turn-${move}`}>
+          <div className="top">&bull;</div>
+          <div className="bottom"></div>
+        </div>
       </div>
-    </div>);
+    );
   }
 }
 

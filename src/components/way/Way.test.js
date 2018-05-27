@@ -29,5 +29,4 @@ describe('Way testing', () => {
     const wrapper = mount(<Way x={1} y={0}/>);
     expect(wrapper.find('.way').hasClass('empty')).toBeTruthy();
   });
-
 });

@@ -8,11 +8,12 @@ class Gates extends Component {
   }
 
   render() {
-    return (<div className="gates">
-      <div></div>
-    </div>);
+    return (
+      <div className="gates">
+        <div></div>
+      </div>
+    );
   }
 }
 
 export default Gates;
-

@@ -6,6 +6,7 @@ import {
   ACTION_PACMAN_EAT,
   ACTION_CHECK_POSITION,
   ACTION_ZONE_CHANGED,
+  SPIDER_EATEN,
   directions, zones
 } from '../constants';
 
@@ -14,15 +15,15 @@ export const game = store => next => (action) => {
 
   const state = store.getState();
   const field = state.field || [];
-
   switch (action.type) {
     case ACTION_MOVE_SPIDER: {
       const pt = api.increasePoint(action.payload, action.payload.move);
       const dirs = api.getAvailableDirections(pt, field);
-      if (!action.payload.drugged) {
-        action.payload.move = api.getPreferredDirection(action.payload, state.pacman, dirs, action.payload.move);
-      } else {
+      if (action.payload.drugged > 0) {
         action.payload.move = api.getRandomDirection(dirs, action.payload.move);
+      } else {
+        const goal = action.payload.drugged ? state.game.center : state.pacman;
+        action.payload.move = api.getPreferredDirection(action.payload, goal, dirs, action.payload.move);
       }
       action.payload = {...action.payload, ...pt};
       if (action.payload.drugged > 0) {
@@ -31,7 +32,7 @@ export const game = store => next => (action) => {
     }
       break;
 
-    case ACTION_MOVE_PACMAN:
+    case ACTION_MOVE_PACMAN: {
       let pt = api.increasePoint({x: action.payload.x, y: action.payload.y}, action.payload.move);
       pt = api.fixOverstepping(pt, action.payload.move, field);
       const dirs = api.getAvailableDirections(pt, field);
@@ -42,6 +43,7 @@ export const game = store => next => (action) => {
         action.payload.move = directions.no;
       }
       action.payload = {...action.payload, ...pt};
+    }
       break;
 
     case ACTION_CHANGE_PACMAN_DIRECTION:
@@ -64,11 +66,17 @@ export const game = store => next => (action) => {
       break;
 
     case ACTION_CHECK_POSITION:
-      Object.keys(state.spiders).forEach(function (key) {
-        if (api.pointsEqual(state.spiders[key], state.pacman)) {
-          //console.log(key, 'DDDDEEEEEAAAADDDD');
+      const center = state.game.center;
+      if (action.payload.drugged === SPIDER_EATEN) {
+        if (api.pointsEqual(action.payload, center)) {
+          action.payload.drugged = 0;
         }
-      });
+      }
+      if (api.pointsEqual(action.payload, state.pacman)) {
+        if (action.payload.drugged > 0) {
+          action.payload.drugged = SPIDER_EATEN;
+        }
+      }
       break;
 
     case ACTION_ZONE_CHANGED:
@@ -78,5 +86,3 @@ export const game = store => next => (action) => {
   }
   return next(action);
 }
-
-

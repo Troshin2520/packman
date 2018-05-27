@@ -82,27 +82,27 @@ describe('field functions tests', () => {
   });
 
   it('pointsInLine function tested', () => {
-    expect(api.pointsInLine({y:1, x:1}, {y:1, x:4}, field)).toBeFalsy();
-    expect(api.pointsInLine({y:2, x:1}, {y:2, x:4}, field)).toBeTruthy();
-    expect(api.pointsInLine({y:21, x:13}, {y:14, x:45}, field)).toBeFalsy();
-    expect(api.pointsInLine({y:0, x:1}, {y:3, x:1}, field)).toBeFalsy();
-    expect(api.pointsInLine({y:0, x:15}, {y:3, x:1}, field)).toBeFalsy();
-    expect(api.pointsInLine({y:0, x:3}, {y:2, x:3}, field)).toBeTruthy();
+    expect(api.pointsInLine({y: 1, x: 1}, {y: 1, x: 4}, field)).toBeFalsy();
+    expect(api.pointsInLine({y: 2, x: 1}, {y: 2, x: 4}, field)).toBeTruthy();
+    expect(api.pointsInLine({y: 21, x: 13}, {y: 14, x: 45}, field)).toBeFalsy();
+    expect(api.pointsInLine({y: 0, x: 1}, {y: 3, x: 1}, field)).toBeFalsy();
+    expect(api.pointsInLine({y: 0, x: 15}, {y: 3, x: 1}, field)).toBeFalsy();
+    expect(api.pointsInLine({y: 0, x: 3}, {y: 2, x: 3}, field)).toBeTruthy();
   });
 
 
   it('pointInArray function tested', () => {
-    expect(api.pointInArray({y:1, x:1}, field)).toBeTruthy();
-    expect(api.pointInArray({y:15, x:1},  field)).toBeFalsy();
-    expect(api.pointInArray({y:21, x:13}, field)).toBeFalsy();
-    expect(api.pointInArray({y:0, x:15}, field)).toBeFalsy();
-    expect(api.pointInArray({y:2, x:3}, field)).toBeTruthy();
+    expect(api.pointInArray({y: 1, x: 1}, field)).toBeTruthy();
+    expect(api.pointInArray({y: 15, x: 1}, field)).toBeFalsy();
+    expect(api.pointInArray({y: 21, x: 13}, field)).toBeFalsy();
+    expect(api.pointInArray({y: 0, x: 15}, field)).toBeFalsy();
+    expect(api.pointInArray({y: 2, x: 3}, field)).toBeTruthy();
   });
 
   it('pointsEqual function tested', () => {
-    expect(api.pointsEqual({y:2, x:1}, {y:2, x:1})).toBeTruthy();
-    expect(api.pointsEqual({y:0, x:1},  {x:1})).toBeFalsy();
-    expect(api.pointsEqual({y:1, x: 2}, {y:2, x:1})).toBeFalsy();
+    expect(api.pointsEqual({y: 2, x: 1}, {y: 2, x: 1})).toBeTruthy();
+    expect(api.pointsEqual({y: 0, x: 1}, {x: 1})).toBeFalsy();
+    expect(api.pointsEqual({y: 1, x: 2}, {y: 2, x: 1})).toBeFalsy();
   });
 
   it('getRandomDirection function tested', () => {

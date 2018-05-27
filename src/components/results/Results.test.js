@@ -10,8 +10,7 @@ Enzyme.configure({adapter: new Adapter()});
 
 describe('Results testing', () => {
 
-  const initialState = {
-  };
+  const initialState = {};
   const mockStore = configureStore();
   const store = mockStore(initialState);
 

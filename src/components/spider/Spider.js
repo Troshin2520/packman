@@ -3,13 +3,21 @@ import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import './Spider.less';
-import {ACTION_MOVE_SPIDER, ACTION_CHECK_POSITION, BLOCK_SIZE, directions, colors} from '../../constants';
+import {
+  ACTION_MOVE_SPIDER,
+  ACTION_CHECK_POSITION,
+  BLOCK_SIZE,
+  SPIDER_EATEN,
+  directions,
+  colors
+} from '../../constants';
 
 class Spider extends Component {
 
   constructor(props) {
     super(props);
     this.onAnimationEnd = this.onAnimationEnd.bind(this);
+    this.onAnimationStart = this.onAnimationStart.bind(this);
   }
 
   componentWillUpdate() {
@@ -24,37 +32,54 @@ class Spider extends Component {
   onAnimationEnd() {
     const {onChangeState, ...params} = this.props;
     this.props.onChangeState(ACTION_MOVE_SPIDER, params);
-    this.props.onChangeState(ACTION_CHECK_POSITION, {});
+  }
+
+  onAnimationStart() {
+    const {onChangeState, ...params} = this.props;
+    this.props.onChangeState(ACTION_CHECK_POSITION, params);
   }
 
 
   render() {
-    return (<div className={`spider ${this.props.color}
-                             ${this.props.drugged > 0 ? 'drugged' : ''}
-                             ${this.props.drugged < 0 ? 'eaten' : ''}
-                             move-${this.props.move}
-                             move-speed-${this.props.speed}
-                             turn-${this.props.move}`}
-                 style={{top: `${this.props.y * BLOCK_SIZE}rem`,
-                         left: `${this.props.x * BLOCK_SIZE}rem`}}
-                 onAnimationEnd={this.onAnimationEnd}>
-      <div className="body">
-        <div className="eyes">
-          <div className="pupils"></div>
+    const {
+      color,
+      drugged,
+      move,
+      speed,
+      x,
+      y
+    } = this.props;
+    return (
+      <div className={`spider ${color}
+                             ${drugged && 'drugged'}
+                             ${drugged === SPIDER_EATEN && 'eaten'}
+                             move-${move}
+                             move-speed-${speed}
+                             turn-${move}`}
+           style={{
+             top: `${y * BLOCK_SIZE}rem`,
+             left: `${x * BLOCK_SIZE}rem`
+           }}
+           onAnimationEnd={this.onAnimationEnd}
+           onAnimationStart={this.onAnimationStart}>
+        <div className="body">
+          <div className="eyes">
+            <div className="pupils"></div>
+          </div>
+          <div className="eyes">
+            <div className="pupils"></div>
+          </div>
         </div>
-        <div className="eyes">
-          <div className="pupils"></div>
+        <div className="bottom">
+          <div className="claws">
+            <div className="claw"></div>
+            <div className="claw"></div>
+            <div className="claw"></div>
+            <div className="claw"></div>
+          </div>
         </div>
       </div>
-      <div className="bottom">
-        <div className="claws">
-          <div className="claw"></div>
-          <div className="claw"></div>
-          <div className="claw"></div>
-          <div className="claw"></div>
-        </div>
-      </div>
-    </div>);
+    );
   }
 }
 
