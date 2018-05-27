@@ -26,7 +26,6 @@ class Spider extends Component {
   onAnimationEnd = () => {
     const {onChangeState, ...params} = this.props;
     this.props.onChangeState(ACTION_MOVE_SPIDER, params);
-    this.props.onChangeState(ACTION_CHECK_POSITION, params);
   }
 
   onAnimationStart = () => {

@@ -54,7 +54,6 @@ class Field extends Component {
 
 Field.propTypes = {};
 
-
 export default connect(
   ({field}) => {
     return {field};

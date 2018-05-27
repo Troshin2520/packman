@@ -59,28 +59,31 @@ export const game = store => next => (action) => {
       break;
 
     case ACTION_PACMAN_EAT:
-      let nextPt = api.increasePoint({x: state.pacman.x, y: state.pacman.y}, state.pacman.move);
+      const nextPt = api.increasePoint({x: state.pacman.x, y: state.pacman.y}, state.pacman.move);
       if (api.pointInArray(nextPt, state.field)) {
         action.payload = nextPt;
       }
       break;
 
-    case ACTION_CHECK_POSITION:
-      const center = state.game.center;
-      if (action.payload.drugged === SPIDER_EATEN) {
-        if (api.pointsEqual(action.payload, center)) {
-          action.payload.drugged = 0;
+    case ACTION_CHECK_POSITION:{
+        const center = state.game.center;
+        const { drugged } = action.payload;
+        if (drugged === SPIDER_EATEN) {
+          if (api.pointsEqual(action.payload, center)) {
+            action.payload.drugged = 0;
+          }
         }
-      }
-      if (api.pointsEqual(action.payload, state.pacman)) {
-        if (action.payload.drugged > 0) {
-          action.payload.drugged = SPIDER_EATEN;
+        if (api.pointsEqual(action.payload, state.pacman)) {
+          if (drugged > 0) {
+            action.payload.drugged = SPIDER_EATEN;
+          }
         }
       }
       break;
 
     case ACTION_ZONE_CHANGED:
-      action.payload.feeds = api.getFeedsCount(zones[action.payload.zone].field);
+      const { zone } = action.payload;
+      action.payload.feeds = api.getFeedsCount(zones[zone].field);
       break;
     default:
   }
